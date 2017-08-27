@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context="com.example.cristian.inzynierka.VizualizationActivity">
+<android.support.v7.widget.Toolbar
+    android:background="@color/colorPrimary"
+    android:id="@+id/toolbar2"
+    android:layout_width="match_parent"
+    android:layout_height="50dp">
+</android.support.v7.widget.Toolbar>
+<GridLayout
+    android:id="@+id/grid2"
+    android:columnCount="3"
+    android:rowCount="10"
+    android:stretchMode = "columnWidth"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_below="@+id/toolbar2"></GridLayout>
+
+</RelativeLayout>

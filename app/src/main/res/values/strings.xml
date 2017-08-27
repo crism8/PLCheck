@@ -1,3 +1,9 @@
 <resources>
-    <string name="app_name">Inzynierka</string>
+    <string name="app_name">PLChecker</string>
+    <string name="title_activity_connect">Connect</string>
+    <string name="sendButton">Połącz</string>
+    <string name="ipAdress">Address IP:</string>
+    <string name="rack">Rack:</string>
+    <string name="slot">Slot:</string>
+
 </resources>

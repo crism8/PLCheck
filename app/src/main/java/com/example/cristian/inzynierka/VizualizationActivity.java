@@ -7,69 +7,37 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.GridLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+public class VizualizationActivity extends AppCompatActivity {
     private Toolbar toolbar;
     private GridLayout grid;
     private int width;
     private  int height;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        toolbar = ((Toolbar) findViewById(R.id.toolbar));
+        setContentView(R.layout.activity_vizualization);
 
-        grid = (GridLayout) findViewById(R.id.grid);
+        toolbar = ((Toolbar) findViewById(R.id.toolbar2));
+
+        grid = (GridLayout) findViewById(R.id.grid2);
         width = (int) (getResources().getDisplayMetrics().widthPixels/3f);
         height = (int) (getResources().getDisplayMetrics().heightPixels/10f);
+
         setSupportActionBar(toolbar);
 
-
-        findViewById(R.id.dodaj).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-             TextView tv = (TextView) findViewById(R.id.label);
-                tv.setText("Cessc");
-            }
-        });
     }
-    public void goToVizualization(View view) {
-        Intent intent = new Intent(this, VizualizationActivity.class);
-
-        startActivity(intent);
-    }
-
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-    }
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 

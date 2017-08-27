@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.cristian.inzynierka.ConnectActivity">
+
+    <Button
+        android:id="@+id/connectButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="plcConnect"
+        android:text="@string/sendButton"
+        tools:layout_editor_absoluteX="148dp"
+        tools:layout_editor_absoluteY="202dp" />
+
+    <TextView
+        android:id="@+id/plcAddressTextView"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/ipAdress"
+        android:textSize="18sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/rackTextView"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/rack"
+        android:textSize="18sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/plcAddressTextView" />
+
+    <TextView
+        android:id="@+id/slotTextView"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/slot"
+        android:textSize="18sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rackTextView" />
+
+    <EditText
+        android:id="@+id/addressIPEditText"
+        android:layout_width="153dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="000.000.000.000"
+        android:inputType="number"
+        android:textAlignment="center"
+        app:layout_constraintLeft_toRightOf="@+id/plcAddressTextView"
+        android:layout_marginLeft="24dp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/plcAddressTextView" />
+
+    <EditText
+        android:id="@+id/rackEditText"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="0"
+        android:inputType="number"
+        android:textAlignment="center"
+        app:layout_constraintBaseline_toBaselineOf="@+id/rackTextView"
+        app:layout_constraintLeft_toRightOf="@+id/rackTextView"
+        android:layout_marginLeft="24dp" />
+
+    <EditText
+        android:id="@+id/slotEditText"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="0"
+        android:inputType="number"
+        android:textAlignment="center"
+        app:layout_constraintBaseline_toBaselineOf="@+id/SlotTextView"
+        app:layout_constraintLeft_toRightOf="@+id/SlotTextView"
+        android:layout_marginLeft="24dp" />
+</android.support.constraint.ConstraintLayout>
