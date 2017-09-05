@@ -13,11 +13,11 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.cristian.inzynierka.elevationdrag.VisualisationActivity;
+
 public class MainActivity extends AppCompatActivity {
     private Toolbar toolbar;
-    private GridLayout grid;
-    private int width;
-    private  int height;
+
 
 
     @Override
@@ -25,24 +25,27 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         toolbar = ((Toolbar) findViewById(R.id.toolbar));
-
-        grid = (GridLayout) findViewById(R.id.grid);
-        width = (int) (getResources().getDisplayMetrics().widthPixels/3f);
-        height = (int) (getResources().getDisplayMetrics().heightPixels/10f);
         setSupportActionBar(toolbar);
-
-
-        findViewById(R.id.dodaj).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-             TextView tv = (TextView) findViewById(R.id.label);
-                tv.setText("Cessc");
-            }
-        });
     }
     public void goToVizualization(View view) {
         Intent intent = new Intent(this, VizualizationActivity.class);
+
+        startActivity(intent);
+    }
+    public void goToConnect(View view) {
+        Intent intent = new Intent(this, ConnectActivity.class);
+
+        startActivity(intent);
+    }
+
+    public void goToVisual(View view) {
+        Intent intent = new Intent(this, VisualisationActivity.class);
+
+        startActivity(intent);
+    }
+
+    public void goToDraw(View view) {
+        Intent intent = new Intent(this, DrawingActivity.class);
 
         startActivity(intent);
     }
@@ -70,26 +73,4 @@ public class MainActivity extends AppCompatActivity {
         super.onDestroy();
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-
-        switch (item.getItemId())
-        {
-            case R.id.actionAdd:
-                ImageView img = new ImageView(this);
-                img.setLayoutParams(new LinearLayout.LayoutParams(width, height));
-                img.setImageResource(R.mipmap.ic_launcher);
-                grid.addView(img);
-
-
-                break;
-            case R.id.circle:
-                break;
-            case R.id.square:
-                break;
-            case R.id.triangle:
-                break;
-        }
-        return true;
-    }
 }

@@ -6,12 +6,13 @@
         android:id="@+id/actionAdd"
         android:icon="@mipmap/ic_launcher"/>
     <item android:title="circle"
-        android:id="@+id/circle"
-        android:icon="@mipmap/ic_launcher"/>
+        android:id="@+id/circle" />
     <item android:title="triangle"
-        android:id="@+id/triangle"
-        android:icon="@mipmap/ic_launcher"/>
+        android:id="@+id/triangle" />
     <item android:title="square"
-        android:id="@+id/square"
-        android:icon="@mipmap/ic_launcher"/>
+        android:id="@+id/square" />
+    <item android:title="line"
+        android:id="@+id/line" />
+    <item android:title="rectangle"
+        android:id="@+id/rectangle" />
 </menu>
