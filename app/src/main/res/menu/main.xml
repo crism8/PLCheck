@@ -15,4 +15,6 @@
         android:id="@+id/line" />
     <item android:title="rectangle"
         android:id="@+id/rectangle" />
+    <item android:title="arrow"
+        android:id="@+id/arrow" />
 </menu>

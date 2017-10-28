@@ -84,12 +84,20 @@ public class VizualizationActivity extends AppCompatActivity {
                 grid.addView(lineView);
                 break;
             case R.id.rectangle:
-                View rectangleView = new View(this);
-                rectangleView.setLayoutParams(new LinearLayout.LayoutParams(width, height));
-                rectangleView.setBackground(getResources().getDrawable(R.drawable.rectangle));
-           //
+            View rectangleView = new View(this);
+            rectangleView.setLayoutParams(new LinearLayout.LayoutParams(width, height));
+            rectangleView.setBackground(getResources().getDrawable(R.drawable.rectangle));
+            //
+            //     rectangleView.setBackgroundColor(Color.BLUE);
+            grid.addView(rectangleView);
+            break;
+            case R.id.arrow:
+                View arrowView = new View(this);
+                arrowView.setLayoutParams(new LinearLayout.LayoutParams(width, height));
+                arrowView.setBackground(getResources().getDrawable(R.drawable.arrow));
+                //
                 //     rectangleView.setBackgroundColor(Color.BLUE);
-                grid.addView(rectangleView);
+                grid.addView(arrowView);
                 break;
         }
         return true;
