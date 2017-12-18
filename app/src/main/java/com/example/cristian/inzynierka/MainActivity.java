@@ -5,15 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.GridLayout;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-
-import com.example.cristian.inzynierka.elevationdrag.VisualisationActivity;
 
 public class MainActivity extends AppCompatActivity {
     private Toolbar toolbar;
@@ -28,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
     }
     public void goToVizualization(View view) {
-        Intent intent = new Intent(this, VizualizationActivity.class);
+        Intent intent = new Intent(this, VisualisationActivity.class);
 
         startActivity(intent);
     }
@@ -39,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void goToVisual(View view) {
-        Intent intent = new Intent(this, VisualisationActivity.class);
+        Intent intent = new Intent(this, com.example.cristian.inzynierka.elevationdrag.VisualisationActivity.class);
 
         startActivity(intent);
     }
@@ -54,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 
-        getMenuInflater().inflate(R.menu.main, menu);
+        getMenuInflater().inflate(R.menu.menu, menu);
         return true;
     }
 

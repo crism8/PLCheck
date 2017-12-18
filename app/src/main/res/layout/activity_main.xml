@@ -12,7 +12,6 @@
         android:layout_height="50dp">
     </android.support.v7.widget.Toolbar>
 
-
     <Button
         android:id="@+id/NextButton"
         android:layout_width="wrap_content"

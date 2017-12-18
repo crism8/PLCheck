@@ -6,10 +6,7 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.GridLayout;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 
 import com.example.cristian.inzynierka.R;
 
@@ -68,7 +65,7 @@ public class VisualisationActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 
-        getMenuInflater().inflate(R.menu.main, menu);
+        getMenuInflater().inflate(R.menu.menu, menu);
         return true;
     }
 }

@@ -23,7 +23,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".ConnectActivity" />
-        <activity android:name=".VizualizationActivity" />
+        <activity android:name=".VisualisationActivity" />
         <activity android:name=".elevationdrag.VisualisationActivity" />
         <activity android:name=".DrawingActivity"></activity>
     </application>
