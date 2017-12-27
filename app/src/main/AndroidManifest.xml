@@ -25,7 +25,6 @@
         <activity android:name=".ConnectActivity" />
         <activity android:name=".VisualisationActivity" />
         <activity android:name=".elevationdrag.VisualisationActivity" />
-        <activity android:name=".DrawingActivity"></activity>
     </application>
 
 </manifest>

@@ -17,8 +17,7 @@ tools:context="com.example.cristian.inzynierka.VisualisationActivity">
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:stretchMode="columnWidth"
-        android:padding="4dp"
-
+        android:padding="2dp"
         android:alignmentMode="alignBounds"
         android:useDefaultMargins="true"
 
@@ -30,7 +29,44 @@ tools:context="com.example.cristian.inzynierka.VisualisationActivity">
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
-            android:id="@+id/Button1"
+            android:id="@+id/inputButton1"
+            android:src="@mipmap/ic_brightness_6_black_24dp"
+            android:contentDescription="@null"
+            android:onClick="printNo"/>
+        <ImageButton
+            android:onClick="goToCoonnect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:id="@+id/outputButton1"
+            android:src="@mipmap/ic_toys_black_24dp"
+            android:contentDescription="@null" />
+        <ImageButton
+            android:onClick="printNo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:id="@+id/inputButton2"
+            android:src="@mipmap/ic_add_black_24dp"
+            android:contentDescription="@null" />
+        <ImageButton
+            android:onClick="printNo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:id="@+id/outputButton2"
+            android:src="@mipmap/ic_toys_black_24dp"
+            android:contentDescription="@null" />
+        <ImageButton
+            android:onClick="printNo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:id="@+id/inputButton3"
             android:src="@mipmap/ic_add_black_24dp"
             android:contentDescription="@null" />
         <ImageButton
@@ -38,7 +74,7 @@ tools:context="com.example.cristian.inzynierka.VisualisationActivity">
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
-            android:id="@+id/Button2"
+            android:id="@+id/outputButton3"
             android:src="@mipmap/ic_add_black_24dp"
             android:contentDescription="@null" />
         <ImageButton
@@ -46,7 +82,7 @@ tools:context="com.example.cristian.inzynierka.VisualisationActivity">
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
-            android:id="@+id/Button3"
+            android:id="@+id/inputButton4"
             android:src="@mipmap/ic_add_black_24dp"
             android:contentDescription="@null" />
         <ImageButton
@@ -54,7 +90,7 @@ tools:context="com.example.cristian.inzynierka.VisualisationActivity">
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
-            android:id="@+id/Button4"
+            android:id="@+id/outputButton4"
             android:src="@mipmap/ic_add_black_24dp"
             android:contentDescription="@null" />
         <ImageButton
@@ -62,7 +98,7 @@ tools:context="com.example.cristian.inzynierka.VisualisationActivity">
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
-            android:id="@+id/Button5"
+            android:id="@+id/inputButton5"
             android:src="@mipmap/ic_add_black_24dp"
             android:contentDescription="@null" />
         <ImageButton
@@ -70,7 +106,7 @@ tools:context="com.example.cristian.inzynierka.VisualisationActivity">
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
-            android:id="@+id/Button6"
+            android:id="@+id/outputButton5"
             android:src="@mipmap/ic_add_black_24dp"
             android:contentDescription="@null" />
         <ImageButton
@@ -78,18 +114,48 @@ tools:context="com.example.cristian.inzynierka.VisualisationActivity">
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
-            android:id="@+id/Button7"
+            android:id="@+id/inputButton6"
             android:src="@mipmap/ic_add_black_24dp"
             android:contentDescription="@null" />
         <ImageButton
-            android:onClick="addWidget"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
-            android:id="@+id/Button8"
+            android:id="@+id/outputButton6"
             android:src="@mipmap/ic_add_black_24dp"
             android:contentDescription="@null" />
-
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:id="@+id/inputButton7"
+            android:src="@mipmap/ic_add_black_24dp"
+            android:contentDescription="@null" />
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:id="@+id/outputButton7"
+            android:src="@mipmap/ic_add_black_24dp"
+            android:contentDescription="@null" />
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:id="@+id/inputButton8"
+            android:src="@mipmap/ic_add_black_24dp"
+            android:contentDescription="@null" />
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:id="@+id/outputButton8"
+            android:src="@mipmap/ic_add_black_24dp"
+            android:contentDescription="@null"/>
 </GridLayout>
 </RelativeLayout>

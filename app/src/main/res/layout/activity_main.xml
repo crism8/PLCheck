@@ -17,39 +17,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="46dp"
-        android:onClick="goToVizualization"
+        android:onClick="goToVisualization"
         android:text="Next"
         android:layout_below="@+id/toolbar"
         android:layout_centerHorizontal="true" />
 
     <Button
-        android:id="@+id/VisualButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/NextButton"
-        android:layout_below="@+id/NextButton"
-        android:layout_marginTop="77dp"
-        android:onClick="goToVisual"
-        android:text="Visual" />
-
-    <Button
         android:id="@+id/ConnectButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/VisualButton"
-        android:layout_below="@+id/VisualButton"
+        android:layout_below="@+id/NextButton"
         android:layout_marginTop="48dp"
         android:onClick="goToConnect"
         android:text="Connection" />
-
-    <Button
-        android:id="@+id/Draw"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/ConnectButton"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
-        android:onClick="goToDraw"
-        android:text="Button" />
-
 </RelativeLayout>

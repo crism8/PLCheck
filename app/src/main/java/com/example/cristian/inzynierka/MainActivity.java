@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         toolbar = ((Toolbar) findViewById(R.id.toolbar));
         setSupportActionBar(toolbar);
     }
-    public void goToVizualization(View view) {
+    public void goToVisualization(View view) {
         Intent intent = new Intent(this, VisualisationActivity.class);
 
         startActivity(intent);
@@ -29,20 +29,6 @@ public class MainActivity extends AppCompatActivity {
 
         startActivity(intent);
     }
-
-    public void goToVisual(View view) {
-        Intent intent = new Intent(this, com.example.cristian.inzynierka.elevationdrag.VisualisationActivity.class);
-
-        startActivity(intent);
-    }
-
-    public void goToDraw(View view) {
-        Intent intent = new Intent(this, DrawingActivity.class);
-
-        startActivity(intent);
-    }
-
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 
