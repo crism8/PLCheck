@@ -26,7 +26,6 @@ public class MainActivity extends AppCompatActivity {
     }
     public void goToConnect(View view) {
         Intent intent = new Intent(this, ConnectActivity.class);
-
         startActivity(intent);
     }
     @Override

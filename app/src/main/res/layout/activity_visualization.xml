@@ -30,7 +30,7 @@ tools:context="com.example.cristian.inzynierka.VisualisationActivity">
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
             android:id="@+id/inputButton1"
-            android:src="@mipmap/ic_brightness_6_black_24dp"
+            android:src="@mipmap/ic_add_black_24dp"
             android:contentDescription="@null"
             android:onClick="printNo"/>
         <ImageButton
@@ -40,7 +40,7 @@ tools:context="com.example.cristian.inzynierka.VisualisationActivity">
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
             android:id="@+id/outputButton1"
-            android:src="@mipmap/ic_toys_black_24dp"
+            android:src="@mipmap/ic_add_black_24dp"
             android:contentDescription="@null" />
         <ImageButton
             android:onClick="printNo"
@@ -58,7 +58,7 @@ tools:context="com.example.cristian.inzynierka.VisualisationActivity">
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
             android:id="@+id/outputButton2"
-            android:src="@mipmap/ic_toys_black_24dp"
+            android:src="@mipmap/ic_add_black_24dp"
             android:contentDescription="@null" />
         <ImageButton
             android:onClick="printNo"

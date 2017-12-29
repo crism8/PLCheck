@@ -1,5 +1,6 @@
 package com.example.cristian.inzynierka;
 
+import android.graphics.Color;
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,7 +9,9 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.GridLayout;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
@@ -23,8 +26,12 @@ public class VisualisationActivity extends FragmentActivity implements ListOfIte
     private static final String TAG = "VisualisationActivity";
 
 
-    public void onSelectedOption(int selectedIndex) {
+    public void onSelectedOption(int selectedIndex, View v) {
         // do something with the newly selected index
+        ImageButton button = (ImageButton) findViewById(v.getId());
+        Log.d("myTag3", "This is my messa33ge" + v.getId()+ "" + R.id.inputButton1);
+
+        button.setBackgroundResource(R.drawable.ic_control_point_black_24dp);
     }
 
     @Override
@@ -43,21 +50,15 @@ public class VisualisationActivity extends FragmentActivity implements ListOfIte
        // setSupportActionBar(toolbar);
     }
     public void goToCoonnect(View view) {
-        final ListOfItemsDialog sd = ListOfItemsDialog.newInstance(R.array.visualizationItemsStringArray, -1);
+        final ListOfItemsDialog sd = ListOfItemsDialog.newInstance(R.array.visualizationItemsStringArray, -1, view);
         sd.show(getSupportFragmentManager(), TAG);
     }
     public void printNo( View v ) {
-        switch (v.getId()) {
-            case (R.id.inputButton1):
-                Log.d("myTag1", "This is m66y mess22age");
-                break;
-            case (R.id.inputButton2):
-                Log.d("myTag2", "This is my mess22age");
-                break;
-            case (R.id.inputButton3):
-                Log.d("myTag3", "This is my messa33ge");
-                break;
-        }
+        //Log.d("myTag3", "This is my messa33ge" + v.getId() + R.id.inputButton1);
+
+        ImageButton button = (ImageButton) findViewById(v.getId());
+        button.setBackgroundResource(R.drawable.ic_control_point_black_24dp);
+        //button.setBackgroundColor(R.color.colorAccent);
     }
         @Override
         public boolean onCreateOptionsMenu(Menu menu) {

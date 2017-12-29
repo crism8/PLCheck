@@ -7,16 +7,5 @@
     <string name="slot">Slot:</string>
     <string name="ok">Ok</string>
     <string name="cancel">Anuluj</string>
-
     <string name="chooseItemTitle">Wybierz element wizualizacji:</string>
-
-    <string-array
-        name="visualizationItemsStringArray">
-        <item>Wiatrak</item>
-        <item>Dioda</item>
-        <item>Wiatrak2</item>
-        <item>Dioda2</item>
-        <item>Wiatrak3</item>
-    </string-array>
-
 </resources>

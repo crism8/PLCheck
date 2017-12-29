@@ -18,17 +18,18 @@ public class ListOfItemsDialog extends DialogFragment implements DialogInterface
     private static final String TAG = "ListOfItemsDialog";
     static int mResourceArray;
     static int mSelectedIndex;
+    static View pressedButton;
     static OnDialogSelectorListener mDialogSelectorCallback;
 
     public interface OnDialogSelectorListener {
-        public void onSelectedOption(int dialogId);
+        public void onSelectedOption(int dialogId, View view);
     }
 
-    public static ListOfItemsDialog newInstance(int res, int selected) {
+    public static ListOfItemsDialog newInstance(int res, int selected, View view) {
         final ListOfItemsDialog dialog  = new ListOfItemsDialog();
         mResourceArray = res;
         mSelectedIndex = selected;
-
+        pressedButton = view;
         return dialog;
     }
 
@@ -64,7 +65,7 @@ public class ListOfItemsDialog extends DialogFragment implements DialogInterface
             case Dialog.BUTTON_POSITIVE:
                 dialog.dismiss();
                 // message selected value to registered calbacks
-                mDialogSelectorCallback.onSelectedOption(mSelectedIndex);
+                mDialogSelectorCallback.onSelectedOption(mSelectedIndex, pressedButton);
                 break;
 
             default: // choice selected click
@@ -73,19 +74,4 @@ public class ListOfItemsDialog extends DialogFragment implements DialogInterface
         }
 
     }
-    /*
-    @NonNull
-    @Override
-    public Dialog onCreateDialog(Bundle savedInstanceState) {
-
-        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        builder.setTitle(R.string.chooseItemTitle).setSingleChoiceItems(visItemList, -1, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-
-            }
-        })
-
-        return super.onCreateDialog(savedInstanceState);
-    }*/
 }
