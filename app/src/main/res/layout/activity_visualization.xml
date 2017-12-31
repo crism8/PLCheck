@@ -20,7 +20,6 @@ tools:context="com.example.cristian.inzynierka.VisualisationActivity">
         android:padding="2dp"
         android:alignmentMode="alignBounds"
         android:useDefaultMargins="true"
-
         android:columnCount="2"
         android:rowCount="8"
         android:layout_below="@+id/toolbar2">
@@ -32,9 +31,9 @@ tools:context="com.example.cristian.inzynierka.VisualisationActivity">
             android:id="@+id/inputButton1"
             android:src="@mipmap/ic_add_black_24dp"
             android:contentDescription="@null"
-            android:onClick="printNo"/>
+            android:onClick="chooseItem"/>
         <ImageButton
-            android:onClick="goToCoonnect"
+            android:onClick="chooseItem"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
@@ -43,7 +42,7 @@ tools:context="com.example.cristian.inzynierka.VisualisationActivity">
             android:src="@mipmap/ic_add_black_24dp"
             android:contentDescription="@null" />
         <ImageButton
-            android:onClick="printNo"
+            android:onClick="chooseItem"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
@@ -52,7 +51,7 @@ tools:context="com.example.cristian.inzynierka.VisualisationActivity">
             android:src="@mipmap/ic_add_black_24dp"
             android:contentDescription="@null" />
         <ImageButton
-            android:onClick="printNo"
+            android:onClick="chooseItem"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
@@ -61,7 +60,7 @@ tools:context="com.example.cristian.inzynierka.VisualisationActivity">
             android:src="@mipmap/ic_add_black_24dp"
             android:contentDescription="@null" />
         <ImageButton
-            android:onClick="printNo"
+            android:onClick="chooseItem"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
@@ -70,6 +69,7 @@ tools:context="com.example.cristian.inzynierka.VisualisationActivity">
             android:src="@mipmap/ic_add_black_24dp"
             android:contentDescription="@null" />
         <ImageButton
+            android:onClick="chooseItem"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
@@ -78,6 +78,7 @@ tools:context="com.example.cristian.inzynierka.VisualisationActivity">
             android:src="@mipmap/ic_add_black_24dp"
             android:contentDescription="@null" />
         <ImageButton
+            android:onClick="chooseItem"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
@@ -86,6 +87,7 @@ tools:context="com.example.cristian.inzynierka.VisualisationActivity">
             android:src="@mipmap/ic_add_black_24dp"
             android:contentDescription="@null" />
         <ImageButton
+            android:onClick="chooseItem"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
@@ -94,6 +96,7 @@ tools:context="com.example.cristian.inzynierka.VisualisationActivity">
             android:src="@mipmap/ic_add_black_24dp"
             android:contentDescription="@null" />
         <ImageButton
+            android:onClick="chooseItem"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
@@ -102,6 +105,7 @@ tools:context="com.example.cristian.inzynierka.VisualisationActivity">
             android:src="@mipmap/ic_add_black_24dp"
             android:contentDescription="@null" />
         <ImageButton
+            android:onClick="chooseItem"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
@@ -110,6 +114,7 @@ tools:context="com.example.cristian.inzynierka.VisualisationActivity">
             android:src="@mipmap/ic_add_black_24dp"
             android:contentDescription="@null" />
         <ImageButton
+            android:onClick="chooseItem"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
@@ -118,6 +123,7 @@ tools:context="com.example.cristian.inzynierka.VisualisationActivity">
             android:src="@mipmap/ic_add_black_24dp"
             android:contentDescription="@null" />
         <ImageButton
+            android:onClick="chooseItem"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
@@ -126,6 +132,7 @@ tools:context="com.example.cristian.inzynierka.VisualisationActivity">
             android:src="@mipmap/ic_add_black_24dp"
             android:contentDescription="@null" />
         <ImageButton
+            android:onClick="chooseItem"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
@@ -134,6 +141,7 @@ tools:context="com.example.cristian.inzynierka.VisualisationActivity">
             android:src="@mipmap/ic_add_black_24dp"
             android:contentDescription="@null" />
         <ImageButton
+            android:onClick="chooseItem"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
@@ -142,6 +150,7 @@ tools:context="com.example.cristian.inzynierka.VisualisationActivity">
             android:src="@mipmap/ic_add_black_24dp"
             android:contentDescription="@null" />
         <ImageButton
+            android:onClick="chooseItem"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
@@ -150,6 +159,7 @@ tools:context="com.example.cristian.inzynierka.VisualisationActivity">
             android:src="@mipmap/ic_add_black_24dp"
             android:contentDescription="@null" />
         <ImageButton
+            android:onClick="chooseItem"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"

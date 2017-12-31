@@ -1,6 +1,8 @@
 package com.example.cristian.inzynierka;
 
+import android.content.res.TypedArray;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -15,23 +17,27 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import java.sql.Array;
+
 
 public class VisualisationActivity extends FragmentActivity implements ListOfItemsDialog.OnDialogSelectorListener {
     private Toolbar toolbar;
     private GridLayout grid;
     private int width;
-    private  int height;
+    private int height;
     private int numberOfColumns;
-    private  int numberOfRows;
+    private int numberOfRows;
     private static final String TAG = "VisualisationActivity";
-
+    private TypedArray visualizationItemsImagesArray;
 
     public void onSelectedOption(int selectedIndex, View v) {
         // do something with the newly selected index
         ImageButton button = (ImageButton) findViewById(v.getId());
         Log.d("myTag3", "This is my messa33ge" + v.getId()+ "" + R.id.inputButton1);
-
-        button.setBackgroundResource(R.drawable.ic_control_point_black_24dp);
+        Drawable drawable = visualizationItemsImagesArray.getDrawable(selectedIndex);
+        button.setBackground(drawable);
+        button.setScaleType(ImageView.ScaleType.FIT_CENTER);
+       // button.setAdjustViewBounds(true);
     }
 
     @Override
@@ -46,19 +52,13 @@ public class VisualisationActivity extends FragmentActivity implements ListOfIte
         grid = (GridLayout) findViewById(R.id.grid2);
         width = (int) (getResources().getDisplayMetrics().widthPixels/numberOfColumns);
         height = (int) (getResources().getDisplayMetrics().heightPixels/numberOfRows);
+        visualizationItemsImagesArray = getResources().obtainTypedArray(R.array.visualizationItemsImagesArray);
 
        // setSupportActionBar(toolbar);
     }
-    public void goToCoonnect(View view) {
+    public void chooseItem(View view) {
         final ListOfItemsDialog sd = ListOfItemsDialog.newInstance(R.array.visualizationItemsStringArray, -1, view);
         sd.show(getSupportFragmentManager(), TAG);
-    }
-    public void printNo( View v ) {
-        //Log.d("myTag3", "This is my messa33ge" + v.getId() + R.id.inputButton1);
-
-        ImageButton button = (ImageButton) findViewById(v.getId());
-        button.setBackgroundResource(R.drawable.ic_control_point_black_24dp);
-        //button.setBackgroundColor(R.color.colorAccent);
     }
         @Override
         public boolean onCreateOptionsMenu(Menu menu) {
