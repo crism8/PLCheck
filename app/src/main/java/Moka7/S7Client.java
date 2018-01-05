@@ -358,7 +358,7 @@ public class S7Client
         LastError=0;
         try {                       
             TCPSocket = new Socket(); 
-            TCPSocket.connect(sockaddr ,5000);
+            TCPSocket.connect(sockaddr ,10000);
             TCPSocket.setTcpNoDelay(true);
             InStream = new DataInputStream(TCPSocket.getInputStream());
             OutStream = new DataOutputStream(TCPSocket.getOutputStream());           
@@ -549,10 +549,10 @@ public class S7Client
                 {
                     LastError=NegotiatePduLength(); // Third stage : S7 PDU negotiation
                 }
-            }	            
+            }
         }
         Connected=LastError==0;
-        
+
         // In case the connection is not completely established (TCP connection + ISO connection + PDU negotiation)
         // we close the socket and its IO streams to revert the object back to pre-Connect() state
         if (!Connected)
@@ -576,9 +576,9 @@ public class S7Client
                 }
             }
             _PDULength = 0;
-        }                
-        
-	return LastError;
+        }
+
+        return LastError;
     }
     
     public void Disconnect()
