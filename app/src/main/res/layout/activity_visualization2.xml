@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="vertical"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:id="@+id/inoutlayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:baselineAligned="false">
+            <LinearLayout
+                android:id="@+id/inputlayuot"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/inputButton1"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:src="@mipmap/ic_add_black_24dp"
+                    android:contentDescription="@null"
+                    android:onClick="animateRotate" />
+
+                <ImageButton
+                    android:id="@+id/inputButton2"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:src="@mipmap/ic_add_black_24dp"
+                    android:contentDescription="@null"
+                    android:onClick="animateX" />
+
+                <ImageButton
+                    android:id="@+id/inputButton3"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:src="@mipmap/ic_add_black_24dp"
+                    android:contentDescription="@null"
+                    android:onClick="animateY" />
+
+                <ImageButton
+                    android:id="@+id/inputButton4"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:src="@mipmap/ic_add_black_24dp"
+                    android:contentDescription="@null"
+                    android:onClick="animateAlpha" />
+
+                <ImageButton
+                    android:id="@+id/inputButton5"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:src="@mipmap/ic_add_black_24dp"
+                    android:contentDescription="@null"
+                    android:onClick="chooseItem" />
+
+                <ImageButton
+                    android:id="@+id/inputButton6"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:src="@mipmap/ic_add_black_24dp"
+                    android:contentDescription="@null"
+                    android:onClick="chooseItem" />
+
+                <ImageButton
+                    android:id="@+id/inputButton7"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:src="@mipmap/ic_add_black_24dp"
+                    android:contentDescription="@null"
+                    android:onClick="chooseItem" />
+
+                <ImageButton
+                    android:id="@+id/inputButton8"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:src="@mipmap/ic_add_black_24dp"
+                    android:contentDescription="@null"
+                    android:onClick="chooseItem" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/outputlayuot"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/outputButton1"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:contentDescription="@null"
+                    android:onClick="chooseItem"
+                    android:src="@mipmap/ic_add_black_24dp" />
+
+                <ImageButton
+                    android:id="@+id/outputButton2"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:contentDescription="@null"
+                    android:onClick="chooseItem"
+                    android:src="@mipmap/ic_add_black_24dp" />
+
+                <ImageButton
+                    android:id="@+id/outputButton3"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:contentDescription="@null"
+                    android:onClick="chooseItem"
+                    android:src="@mipmap/ic_add_black_24dp" />
+
+                <ImageButton
+                    android:id="@+id/outputButton4"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:contentDescription="@null"
+                    android:onClick="chooseItem"
+                    android:src="@mipmap/ic_add_black_24dp" />
+
+                <ImageButton
+                    android:id="@+id/outputButton5"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:contentDescription="@null"
+                    android:onClick="chooseItem"
+                    android:src="@mipmap/ic_add_black_24dp" />
+
+                <ImageButton
+                    android:id="@+id/outputButton6"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:contentDescription="@null"
+                    android:onClick="chooseItem"
+                    android:src="@mipmap/ic_add_black_24dp" />
+
+                <ImageButton
+                    android:id="@+id/outputButton7"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:contentDescription="@null"
+                    android:onClick="chooseItem"
+                    android:src="@mipmap/ic_add_black_24dp" />
+
+                <ImageButton
+                    android:id="@+id/outputButton8"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:contentDescription="@null"
+                    android:onClick="chooseItem"
+                    android:src="@mipmap/ic_add_black_24dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/OK_Button"
+        android:text="@string/okString"
+        android:textSize="20sp"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_weight="1"/>
+</LinearLayout>
+

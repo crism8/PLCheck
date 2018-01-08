@@ -8,4 +8,5 @@
     <string name="ok">Ok</string>
     <string name="cancel">Anuluj</string>
     <string name="chooseItemTitle">Wybierz element wizualizacji:</string>
+    <string name="okString">OK</string>
 </resources>

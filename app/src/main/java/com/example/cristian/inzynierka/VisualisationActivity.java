@@ -1,5 +1,7 @@
 package com.example.cristian.inzynierka;
 
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
 import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
@@ -16,115 +18,68 @@ import android.widget.GridLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-
 import java.sql.Array;
 
-
 public class VisualisationActivity extends FragmentActivity implements ListOfItemsDialog.OnDialogSelectorListener {
-    private Toolbar toolbar;
-    private GridLayout grid;
-    private int width;
-    private int height;
-    private int numberOfColumns;
-    private int numberOfRows;
+
     private static final String TAG = "VisualisationActivity";
     private TypedArray visualizationItemsImagesArray;
 
     public void onSelectedOption(int selectedIndex, View v) {
-        // do something with the newly selected index
         ImageButton button = (ImageButton) findViewById(v.getId());
         Log.d("myTag3", "This is my messa33ge" + v.getId()+ "" + R.id.inputButton1);
         Drawable drawable = visualizationItemsImagesArray.getDrawable(selectedIndex);
-        button.setBackground(drawable);
+        button.setImageDrawable(drawable);
+        button.setBackground(getResources().getDrawable(R.color.whiteColor));
         button.setScaleType(ImageView.ScaleType.FIT_CENTER);
-       // button.setAdjustViewBounds(true);
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_visualization);
-
-        toolbar = ((Toolbar) findViewById(R.id.toolbar2));
-        numberOfRows = 8;
-        numberOfColumns = 2;
-
-        grid = (GridLayout) findViewById(R.id.grid2);
-        width = (int) (getResources().getDisplayMetrics().widthPixels/numberOfColumns);
-        height = (int) (getResources().getDisplayMetrics().heightPixels/numberOfRows);
+        setContentView(R.layout.activity_visualization2);
         visualizationItemsImagesArray = getResources().obtainTypedArray(R.array.visualizationItemsImagesArray);
-
-       // setSupportActionBar(toolbar);
     }
     public void chooseItem(View view) {
         final ListOfItemsDialog sd = ListOfItemsDialog.newInstance(R.array.visualizationItemsStringArray, -1, view);
         sd.show(getSupportFragmentManager(), TAG);
     }
-        @Override
-        public boolean onCreateOptionsMenu(Menu menu) {
 
-            getMenuInflater().inflate(R.menu.menu, menu);
-            return true;
-        }
-        @Override
-        public boolean onOptionsItemSelected(MenuItem item) {
-
-            switch (item.getItemId())
-            {
-                case R.id.actionAdd:
-                    ImageView img = new ImageView(this);
-                    img.setLayoutParams(new LinearLayout.LayoutParams(width, height));
-                    img.setImageResource(R.mipmap.ic_launcher);
-                    grid.addView(img);
-                    break;
-                case R.id.circle:
-                    View circleView = new View(this);
-                    circleView.setLayoutParams(new LinearLayout.LayoutParams(width, height));
-                    circleView.setBackground(getResources().getDrawable(R.drawable.circle));
-                    //circleView.setBackgroundColor(Color.RED);
-                    grid.addView(circleView);
-                    break;
-                case R.id.square:
-                    View squareView = new View(this);
-                    squareView.setLayoutParams(new LinearLayout.LayoutParams(width, height));
-                    squareView.setBackground(getResources().getDrawable(R.drawable.square));
-                    //   squareView.setBackgroundColor(Color.BLACK);
-                    grid.addView(squareView);
-                    break;
-                case R.id.triangle:
-                    View triangleView = new View(this);
-                    triangleView.setLayoutParams(new LinearLayout.LayoutParams(width, height));
-                    triangleView.setBackground(getResources().getDrawable(R.drawable.triangle));
-                    //    triangleView.setBackgroundColor(Color.BLUE);
-                    grid.addView(triangleView);
-                    break;
-                case R.id.line:
-                    View lineView = new View(this);
-                    lineView.setLayoutParams(new LinearLayout.LayoutParams(width, height));
-                    lineView.setBackground(getResources().getDrawable(R.drawable.line));
-                    //   lineView.setBackgroundColor(Color.BLUE);
-                    grid.addView(lineView);
-                    break;
-                case R.id.rectangle:
-                    ImageView Rectangle = new ImageView(this);
-                    Rectangle.setLayoutParams(new LinearLayout.LayoutParams(width, height));
-                    Rectangle.setImageResource(R.drawable.jamonia);
-           /* View rectangleView = new View(this);
-            rectangleView.setBackground(getResources().getDrawable(R.drawable.rectangle)); */
-                    //
-                    //     rectangleView.setBackgroundColor(Color.BLUE);
-                    grid.addView(Rectangle);
-                    break;
-                case R.id.arrow:
-                    View arrowView = new View(this);
-                    arrowView.setLayoutParams(new LinearLayout.LayoutParams(width, height));
-                    arrowView.setBackground(getResources().getDrawable(R.drawable.arrow));
-                    //
-                    //     rectangleView.setBackgroundColor(Color.BLUE);
-                    grid.addView(arrowView);
-                    break;
-            }
-            return true;
-        }
+    public void animateRotate(View v) {
+        long animationDuration = 1000;
+        ImageButton button = (ImageButton) findViewById(v.getId());
+        ObjectAnimator rotateAnimation = ObjectAnimator.ofFloat(button, "rotation", 0f, 360f);
+        rotateAnimation.setDuration(animationDuration);
+        AnimatorSet animmatorSet = new AnimatorSet();
+        animmatorSet.playTogether(rotateAnimation);
+        animmatorSet.start();
     }
+    public void animateX(View v) {
+        long animationDuration = 1000;
+        ImageButton button = (ImageButton) findViewById(v.getId());
+        ObjectAnimator animatorX = ObjectAnimator.ofFloat(button, "X", 420f);
+        animatorX.setDuration(animationDuration);
+        AnimatorSet animmatorSet = new AnimatorSet();
+        animmatorSet.playTogether(animatorX);
+        animmatorSet.start();
+    }
+    public void animateY(View v) {
+        long animationDuration = 1000;
+        ImageButton button = (ImageButton) findViewById(v.getId());
+        ObjectAnimator animatorY = ObjectAnimator.ofFloat(button, "Y", 300f);
+        animatorY.setDuration(animationDuration);
+        AnimatorSet animmatorSet = new AnimatorSet();
+        animmatorSet.playTogether(animatorY);
+        animmatorSet.start();
+    }
+    public void animateAlpha(View v) {
+        long animationDuration = 1000;
+        ImageButton button = (ImageButton) findViewById(v.getId());
+        ObjectAnimator animatorAlpha = ObjectAnimator.ofFloat(button, View.ALPHA, 1.0f, 0.0f);
+        animatorAlpha.setDuration(animationDuration);
+        AnimatorSet animmatorSet = new AnimatorSet();
+        animmatorSet.playTogether(animatorAlpha);
+        animmatorSet.start();
+    }
+}
 

@@ -45,7 +45,7 @@ public class ConnectActivity extends AppCompatActivity {
 
     public void connectionTest (View view) {
         client.SetConnectionType(S7.S7_BASIC);
-        int res = client.ConnectTo("192.168.1.1", 0,1);
+        int res = client.ConnectTo("192.168.1.100", 0,1);
         Log.d("myTag", "This is my message"+ res);
     }
 

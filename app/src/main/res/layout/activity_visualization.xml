@@ -1,37 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
+android:layout_width="fill_parent"
+android:layout_height="fill_parent"
+    android:id="@+id/grid2"
+    android:stretchMode="columnWidth"
+    android:padding="2dp"
+    android:alignmentMode="alignBounds"
+    android:useDefaultMargins="true"
+    android:columnCount="2"
+    android:rowCount="8"
 tools:context="com.example.cristian.inzynierka.VisualisationActivity">
-<android.support.v7.widget.Toolbar
-    android:background="@color/colorPrimary"
-    android:id="@+id/toolbar2"
-    android:layout_width="match_parent"
-    android:layout_height="50dp">
-</android.support.v7.widget.Toolbar>
 
-    <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/grid2"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:stretchMode="columnWidth"
-        android:padding="2dp"
-        android:alignmentMode="alignBounds"
-        android:useDefaultMargins="true"
-        android:columnCount="2"
-        android:rowCount="8"
-        android:layout_below="@+id/toolbar2">
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
             android:id="@+id/inputButton1"
-            android:background="@drawable/ic_control_point_black_24dp"
+            android:src="@mipmap/ic_add_black_24dp"
             android:contentDescription="@null"
-            android:onClick="chooseItem"/>
+            android:onClick="animate"/>
         <ImageButton
             android:onClick="chooseItem"
             android:layout_width="wrap_content"
@@ -168,4 +158,3 @@ tools:context="com.example.cristian.inzynierka.VisualisationActivity">
             android:src="@mipmap/ic_add_black_24dp"
             android:contentDescription="@null"/>
 </GridLayout>
-</RelativeLayout>
