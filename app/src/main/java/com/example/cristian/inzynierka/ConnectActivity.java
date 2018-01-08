@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import Moka7.*;
 
@@ -19,14 +20,17 @@ public class ConnectActivity extends AppCompatActivity {
     EditText ipAddress;
     EditText slot;
     EditText rack;
+    private ProgressBar spinner;
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_connect);
+        spinner=(ProgressBar)findViewById(R.id.progressBar);
+        spinner.setVisibility(View.GONE);
         setupUI();
-
     }
     public void setupUI() {
         EditText ipAddress = (EditText) findViewById(R.id.addressIPEditText);
@@ -79,6 +83,7 @@ public class ConnectActivity extends AppCompatActivity {
         @Override
         protected String doInBackground(String... params) {
             try{
+                spinner.setVisibility(View.VISIBLE);
                 client.SetConnectionType(S7.S7_BASIC);
                 int res = client.ConnectTo(ipAd, rackInt,slotInt);
 
@@ -86,8 +91,10 @@ public class ConnectActivity extends AppCompatActivity {
                     //byte[] data = new byte[4];
                     //res = client.ReadArea(S7.S7AreaDB,7,0,4,data);
                     //ret = "value of DB7.DBD0:"+S7.GetFloatAt(data,0);
+                    spinner.setVisibility(View.GONE);
                     ret = "Connection established.";
                 }else{
+                    spinner.setVisibility(View.GONE);
                     ret= "ERR: "+ S7Client.ErrorText(res);
                 }
                 client.Disconnect();
