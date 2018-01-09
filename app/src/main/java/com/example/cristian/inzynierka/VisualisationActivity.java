@@ -2,6 +2,7 @@ package com.example.cristian.inzynierka;
 
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
+import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
@@ -24,6 +25,8 @@ public class VisualisationActivity extends FragmentActivity implements ListOfIte
 
     private static final String TAG = "VisualisationActivity";
     private TypedArray visualizationItemsImagesArray;
+    ImageButton inputButtons[];
+    ImageButton outputButtons[];
 
     public void onSelectedOption(int selectedIndex, View v) {
         ImageButton button = (ImageButton) findViewById(v.getId());
@@ -39,7 +42,32 @@ public class VisualisationActivity extends FragmentActivity implements ListOfIte
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_visualization2);
         visualizationItemsImagesArray = getResources().obtainTypedArray(R.array.visualizationItemsImagesArray);
+        setupButtons();
     }
+    public void setupButtons() {
+        ImageButton inputButtons[] = new ImageButton[9];
+        ImageButton outputButtons[] = new ImageButton[9];
+        Resources res = getResources();
+        for (int i = 1; i < 9; i++) {
+            String idInName = "inputButton" + i;
+            String idOutName = "outputButton" + i;
+            inputButtons[i] = (ImageButton) findViewById(res.getIdentifier(idInName, "id", getPackageName()));
+            outputButtons[i] = (ImageButton) findViewById(res.getIdentifier(idOutName, "id", getPackageName()));
+            Log.d("myTag4", "This is my messa33ge" + idInName + idOutName);
+        }
+        ImageButton btn = (ImageButton) findViewById(R.id.inputButton1);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                myFancyMethod(v);
+            }
+        });
+
+    }
+    public void myFancyMethod(View v) {
+        // does something very interesting
+    }
+
     public void chooseItem(View view) {
         final ListOfItemsDialog sd = ListOfItemsDialog.newInstance(R.array.visualizationItemsStringArray, -1, view);
         sd.show(getSupportFragmentManager(), TAG);

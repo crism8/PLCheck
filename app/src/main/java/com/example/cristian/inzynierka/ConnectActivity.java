@@ -22,8 +22,6 @@ public class ConnectActivity extends AppCompatActivity {
     EditText rack;
     private ProgressBar spinner;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,6 +61,7 @@ public class ConnectActivity extends AppCompatActivity {
     }
 
     public void plcConnect (View view) {
+        spinner.setVisibility(View.VISIBLE);
         EditText ipAddress = (EditText) findViewById(R.id.addressIPEditText);
         EditText slot = (EditText) findViewById(R.id.slotEditText);
         EditText rack = (EditText) findViewById(R.id.rackEditText);
@@ -83,7 +82,6 @@ public class ConnectActivity extends AppCompatActivity {
         @Override
         protected String doInBackground(String... params) {
             try{
-                spinner.setVisibility(View.VISIBLE);
                 client.SetConnectionType(S7.S7_BASIC);
                 int res = client.ConnectTo(ipAd, rackInt,slotInt);
 
@@ -91,10 +89,8 @@ public class ConnectActivity extends AppCompatActivity {
                     //byte[] data = new byte[4];
                     //res = client.ReadArea(S7.S7AreaDB,7,0,4,data);
                     //ret = "value of DB7.DBD0:"+S7.GetFloatAt(data,0);
-                    spinner.setVisibility(View.GONE);
                     ret = "Connection established.";
                 }else{
-                    spinner.setVisibility(View.GONE);
                     ret= "ERR: "+ S7Client.ErrorText(res);
                 }
                 client.Disconnect();
@@ -107,6 +103,7 @@ public class ConnectActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(String result) {
+            spinner.setVisibility(View.GONE);
             TextView txout = (TextView) findViewById(R.id.ConnectTextView);
             txout.setText(ret);
         }
