@@ -4,38 +4,64 @@ import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
-import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.support.v4.app.FragmentActivity;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
-import android.widget.GridLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import java.sql.Array;
 
 public class VisualisationActivity extends FragmentActivity implements ListOfItemsDialog.OnDialogSelectorListener {
 
     private static final String TAG = "VisualisationActivity";
     private TypedArray visualizationItemsImagesArray;
-    ImageButton inputButtons[];
-    ImageButton outputButtons[];
+    ImageButton inputButtons[] = new ImageButton[9];
+    ImageButton outputButtons[] = new ImageButton[9];
+    boolean isInputButton = false;
+    boolean isOutputButton = false;
+    int buttonNumber = 0;
+
 
     public void onSelectedOption(int selectedIndex, View v) {
-        ImageButton button = (ImageButton) findViewById(v.getId());
-        Log.d("myTag3", "This is my messa33ge" + v.getId()+ "" + R.id.inputButton1);
+        for (int i = 1; i < 9; i++) {
+            if (v.getId() == inputButtons[i].getId()) {
+                isInputButton = true;
+            } else if (v.getId() == outputButtons[i].getId()) {
+                isOutputButton = true;
+            }
+            buttonNumber = i;
+        }
+        //ImageButton button = (ImageButton) findViewById(v.getId());
+        Log.d("myTag3", "This is my messa33ge" + v.getId() + "" + R.id.inputButton1);
         Drawable drawable = visualizationItemsImagesArray.getDrawable(selectedIndex);
-        button.setImageDrawable(drawable);
-        button.setBackground(getResources().getDrawable(R.color.whiteColor));
-        button.setScaleType(ImageView.ScaleType.FIT_CENTER);
+        if (isOutputButton) {
+            outputButtons[buttonNumber].setImageDrawable(drawable);
+            outputButtons[buttonNumber].setBackground(getResources().getDrawable(R.color.whiteColor));
+            outputButtons[buttonNumber].setScaleType(ImageView.ScaleType.FIT_CENTER);
+        } else if (isInputButton) {
+            inputButtons[buttonNumber].setImageDrawable(drawable);
+            inputButtons[buttonNumber].setBackground(getResources().getDrawable(R.color.whiteColor));
+            inputButtons[buttonNumber].setScaleType(ImageView.ScaleType.FIT_CENTER);
+        }
+        chooseAnimationForItem(selectedIndex, buttonNumber, isOutputButton);
     }
+    public void chooseAnimationForItem(int animationNumber, int buttonNumber, boolean isInOut) {
+        if (isInOut) {
+            ImageButton switchButton = outputButtons[buttonNumber];
+        } else {
+            ImageButton switchButton = inputButtons[buttonNumber];
+        }
+        switch(animationNumber) {
+            case 0:
+                break;
+            case 1:
+                break;
+            default:
+
+        }
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,8 +71,6 @@ public class VisualisationActivity extends FragmentActivity implements ListOfIte
         setupButtons();
     }
     public void setupButtons() {
-        ImageButton inputButtons[] = new ImageButton[9];
-        ImageButton outputButtons[] = new ImageButton[9];
         Resources res = getResources();
         for (int i = 1; i < 9; i++) {
             String idInName = "inputButton" + i;
@@ -54,18 +78,19 @@ public class VisualisationActivity extends FragmentActivity implements ListOfIte
             inputButtons[i] = (ImageButton) findViewById(res.getIdentifier(idInName, "id", getPackageName()));
             outputButtons[i] = (ImageButton) findViewById(res.getIdentifier(idOutName, "id", getPackageName()));
             Log.d("myTag4", "This is my messa33ge" + idInName + idOutName);
+            inputButtons[i].setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    chooseItem(v);
+                }
+            });
+            outputButtons[i].setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    chooseItem(v);
+                }
+            });
         }
-        ImageButton btn = (ImageButton) findViewById(R.id.inputButton1);
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                myFancyMethod(v);
-            }
-        });
-
-    }
-    public void myFancyMethod(View v) {
-        // does something very interesting
     }
 
     public void chooseItem(View view) {
