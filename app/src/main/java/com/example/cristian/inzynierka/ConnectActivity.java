@@ -31,9 +31,9 @@ public class ConnectActivity extends AppCompatActivity {
         setupUI();
     }
     public void setupUI() {
-        EditText ipAddress = (EditText) findViewById(R.id.addressIPEditText);
-        EditText slot = (EditText) findViewById(R.id.slotEditText);
-        EditText rack = (EditText) findViewById(R.id.rackEditText);
+        ipAddress = (EditText) findViewById(R.id.addressIPEditText);
+        slot = (EditText) findViewById(R.id.slotEditText);
+        rack = (EditText) findViewById(R.id.rackEditText);
         ipAddress.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
@@ -62,12 +62,10 @@ public class ConnectActivity extends AppCompatActivity {
 
     public void plcConnect (View view) {
         spinner.setVisibility(View.VISIBLE);
-        EditText ipAddress = (EditText) findViewById(R.id.addressIPEditText);
-        EditText slot = (EditText) findViewById(R.id.slotEditText);
-        EditText rack = (EditText) findViewById(R.id.rackEditText);
         slotInt = Integer.parseInt(slot.getText().toString());
         rackInt = Integer.parseInt(rack.getText().toString());
         ipAd = ipAddress.getText().toString();
+        hideKeyboard(view);
         Log.d("myTag", "This is my message:"+ ipAd);
         new PLCConnectionChecker().execute("");
     }
