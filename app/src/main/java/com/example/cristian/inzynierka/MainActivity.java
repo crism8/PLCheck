@@ -21,7 +21,6 @@ public class MainActivity extends AppCompatActivity {
     }
     public void goToVisualization(View view) {
         Intent intent = new Intent(this, VisualisationActivity.class);
-
         startActivity(intent);
     }
     public void goToConnect(View view) {
