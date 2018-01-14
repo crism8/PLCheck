@@ -5,15 +5,26 @@
         <item>Wiatrak</item>
         <item>Dioda</item>
         <item>Wiatrak2</item>
-        <item>Dioda2</item>
-        <item>Wiatrak3</item>
+        <item>Fan</item>
+        <item>Colored fan</item>
+        <item>Light bulb</item>
+        <item>Black background light bulb</item>
+        <item>Star</item>
+        <item>Spinning Star</item>
+        <item>Gear Wheel</item>
+
     </string-array>
 
     <array name="visualizationItemsImagesArray">
-        <item>@drawable/ic_add_black_24dp</item>
-        <item>@drawable/ic_brightness_5_black_24dp</item>
+        <item>@drawable/ic_brightness_empty</item>
         <item>@drawable/ic_filter_tilt_shift_black_24dp</item>
         <item>@drawable/ic_flare_black_24dp</item>
-        <item>@drawable/ic_control_point_black_24dp</item>
+        <item>@drawable/fan</item>
+        <item>@drawable/fan_color</item>
+        <item>@drawable/light_bulb</item>
+        <item>@drawable/light_bulb_empty</item>
+        <item>@drawable/star</item>
+        <item>@drawable/star_color</item>
+        <item>@drawable/gear_wheel</item>
     </array>
 </resources>

@@ -91,7 +91,8 @@ public class VisualisationActivity extends FragmentActivity implements ListOfIte
             inputButtons[buttonNumber].setBackground(getResources().getDrawable(R.color.whiteColor));
             inputButtons[buttonNumber].setScaleType(ImageView.ScaleType.FIT_CENTER);
         }
-
+        isOutputButton = false;
+        isInputButton = false;
     }
     public void animateRotate(View v) {
         long animationDuration = 1000;
