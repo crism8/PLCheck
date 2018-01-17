@@ -31,9 +31,9 @@ public class ConnectActivity extends AppCompatActivity {
         setContentView(R.layout.activity_connect);
         spinner=(ProgressBar)findViewById(R.id.progressBar);
         spinner.setVisibility(View.GONE);
-        setupUI();
+        setupEditTexts();
     }
-    public void setupUI() {
+    public void setupEditTexts() {
         ipAddress = (EditText) findViewById(R.id.addressIPEditText);
         slot = (EditText) findViewById(R.id.slotEditText);
         rack = (EditText) findViewById(R.id.rackEditText);
@@ -83,6 +83,9 @@ public class ConnectActivity extends AppCompatActivity {
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         Intent intent = new Intent(getApplicationContext(), VisualisationActivity.class);
+                        intent.putExtra("goodIp", ipAd);
+                        intent.putExtra("goodRack", rackInt);
+                        intent.putExtra("goodSlot", slotInt);
                         startActivity(intent);
                         dialog.cancel();
                     }
@@ -132,7 +135,7 @@ public class ConnectActivity extends AppCompatActivity {
         protected String doInBackground(String... params) {
             try{
                 client.SetConnectionType(S7.S7_BASIC);
-                int res = client.ConnectTo(ipAd, rackInt,slotInt);
+                int res = client.ConnectTo(ipAd, rackInt, slotInt);
                 if (res==0){ //connection is ok
                     //byte[] data = new byte[4];
                     //res = client.ReadArea(S7.S7AreaDB,7,0,4,data);

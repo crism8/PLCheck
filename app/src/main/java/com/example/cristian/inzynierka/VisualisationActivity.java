@@ -5,6 +5,7 @@ import android.animation.ObjectAnimator;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
+import android.os.AsyncTask;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -15,6 +16,9 @@ import android.widget.ImageView;
 import java.util.HashMap;
 import java.util.Map;
 
+import Moka7.S7;
+import Moka7.S7Client;
+
 public class VisualisationActivity extends FragmentActivity implements ListOfItemsDialog.OnDialogSelectorListener {
 
     private static final String TAG = "VisualisationActivity";
@@ -23,7 +27,11 @@ public class VisualisationActivity extends FragmentActivity implements ListOfIte
     ImageButton outputButtons[] = new ImageButton[9];
     boolean isInputButton = false;
     boolean isOutputButton = false;
-    int buttonNumber = 0;
+    private int buttonNumber = 0;
+    private String ip;
+    private int slot;
+    private int rack;
+    public S7Client client = new S7Client();
     boolean isDefaultOnClickMethod = true;
     Map<String,String> myMap = new HashMap<String, String>();
 
@@ -33,8 +41,19 @@ public class VisualisationActivity extends FragmentActivity implements ListOfIte
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_visualization2);
         visualizationItemsImagesArray = getResources().obtainTypedArray(R.array.visualizationItemsImagesArray);
+        getDataForConnection();
         setupButtons();
     }
+
+    private void getDataForConnection() {
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            ip = extras.getString("goodIp");
+            rack = extras.getInt("goodRack");
+            slot = extras.getInt("goodSlot");
+        }
+    }
+
     public void setupButtons() {
         Resources res = getResources();
         for (int i = 1; i < 9; i++) {
@@ -42,7 +61,6 @@ public class VisualisationActivity extends FragmentActivity implements ListOfIte
             String idOutName = "outputButton" + i;
             inputButtons[i] = (ImageButton) findViewById(res.getIdentifier(idInName, "id", getPackageName()));
             outputButtons[i] = (ImageButton) findViewById(res.getIdentifier(idOutName, "id", getPackageName()));
-            Button OkButton = (Button) findViewById(R.id.OK_Button);
             Log.d("myTag4", "This is my messa33ge" + idInName + idOutName);
             inputButtons[i].setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -56,13 +74,17 @@ public class VisualisationActivity extends FragmentActivity implements ListOfIte
                     chooseItem(v);
                 }
             });
-            OkButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-
-                }
-            });
         }
+        Button OkButton = (Button) findViewById(R.id.OK_Button);
+        OkButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startVisual();
+            }
+        });
+    }
+    public void startVisual() {
+        new PLCData().execute("");
     }
 
     public void chooseItem(View view) {
@@ -94,6 +116,7 @@ public class VisualisationActivity extends FragmentActivity implements ListOfIte
         isOutputButton = false;
         isInputButton = false;
     }
+
     public void animateRotate(View v) {
         long animationDuration = 1000;
         ImageButton button = (ImageButton) findViewById(v.getId());
@@ -129,6 +152,44 @@ public class VisualisationActivity extends FragmentActivity implements ListOfIte
         AnimatorSet animatorSet = new AnimatorSet();
         animatorSet.playTogether(animatorAlpha);
         animatorSet.start();
+    }
+    private class PLCData extends AsyncTask<String, Void, String> {
+        String ret = "";
+        boolean isConnected = false;
+        @Override
+        protected String doInBackground(String... params) {
+            try{
+                client.SetConnectionType(S7.S7_BASIC);
+                int res = client.ConnectTo(ip, rack, slot);
+                if (res==0){ //connection is ok
+                    byte[] data = new byte[4];
+                    res = client.ReadArea(S7.S7AreaDB,1,0,4,data);
+                    ret = "value of DB7.DBD0:"+S7.GetFloatAt(data,0);
+                    isConnected = true;
+                    //ret = "Connection established.";
+                }else{
+                    isConnected = false;
+                    ret= "ERR: "+ S7Client.ErrorText(res);
+                }
+                client.Disconnect();
+            }catch (Exception e) {
+                ret = "EXC: " +e.toString();
+                Thread.interrupted();
+            }
+            return "executed";
+        }
+
+        @Override
+        protected void onPostExecute(String result) {
+            Log.d("ret", ret);
+            //spinner.setVisibility(View.GONE);
+            if (isConnected) {
+                isConnected = false;
+                //goToVisualDialog();
+            } else {
+                //notConnectedDialog();
+            }
+        }
     }
 }
 
