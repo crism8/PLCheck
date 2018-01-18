@@ -160,11 +160,19 @@ public class VisualisationActivity extends FragmentActivity implements ListOfIte
         protected String doInBackground(String... params) {
             try{
                 client.SetConnectionType(S7.S7_BASIC);
-                int res = client.ConnectTo(ip, rack, slot);
+                int res = client.ConnectTo("192.168.1.100", 0, 1);
                 if (res==0){ //connection is ok
-                    byte[] data = new byte[4];
-                    res = client.ReadArea(S7.S7AreaDB,1,0,4,data);
-                    ret = "value of DB7.DBD0:"+S7.GetFloatAt(data,0);
+                    byte[] data1 = new byte[16];
+                    byte[] data2 = new byte[4];
+                    byte[] data3 = new byte[8];
+                    byte[] data4 = new byte[50];
+
+                    res = client.ReadArea(S7.S7AreaDB,1,0,16,data1);
+                    res = client.ReadArea(S7.S7AreaDB,2,0,4,data2);
+                    res = client.ReadArea(S7.S7AreaDB,3,0,8,data3);
+                    res = client.ReadArea(S7.S7AreaDB,2,0,16,data4);
+
+                    ret = "value of DB7.DBD0:"+S7.GetFloatAt(data1,1);
                     isConnected = true;
                     //ret = "Connection established.";
                 }else{
