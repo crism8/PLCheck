@@ -174,29 +174,36 @@ public class VisualisationActivity extends FragmentActivity implements ListOfIte
                     byte[] data5 = new byte[50];
 
 
-                    res = client.ReadArea(S7.S7AreaDB,1,0,32,data1);
-                    res = client.ReadArea(S7.S7AreaDB,1,1,32,data1);
-                    res = client.ReadArea(S7.S7AreaDB,1,0,8,data1);
+                    res = client.ReadArea(S7.S7AreaDB,1,0,1,data1);
+                    res = client.ReadArea(S7.S7AreaDB,1,0,2,data1);
 
-                    res = client.ReadArea(S7.S7AreaDB,2,0,32,data2);
-                    res = client.ReadArea(S7.S7AreaDB,2,1,32,data2);
+                    res = client.ReadArea(S7.S7AreaDB,2,0,4,data2);
                     res = client.ReadArea(S7.S7AreaDB,2,0,16,data2);
 
-                    res = client.ReadArea(S7.S7AreaDB,3,0,32,data3);
-                    res = client.ReadArea(S7.S7AreaDB,3,2,32,data3);
-                    res = client.ReadArea(S7.S7AreaDB,3,3,32,data3);
+                    res = client.ReadArea(S7.S7AreaDB,3,0,4,data3);
+                    res = client.ReadArea(S7.S7AreaDB,3,0,8,data3);
 
 
-                    res = client.ReadArea(S7.S7AreaDB,4,0,32,data4);
-                    res = client.ReadArea(S7.S7AreaDB,4,1,16,data4);
-                    res = client.ReadArea(S7.S7AreaDB,5,0,32,data5);
-                    res = client.ReadArea(S7.S7AreaDB,4,3,12,data5);
+                    res = client.ReadArea(S7.S7AreaDB,4,0,4,data4);
+                    res = client.ReadArea(S7.S7AreaDB,4,0,16,data4);
+                    res = client.ReadArea(S7.S7AreaDB,5,0,4,data5);
+                    res = client.ReadArea(S7.S7AreaDB,5,0,2,data5);
 
-                    ret = "value of Bool DB: :"+S7.GetBitAt(data1,1,1);
-                    ret2 = "value of DInt DB: "+ S7.GetDIntAt(data2, 11);
-                    ret3 = "value of Printable String DB: "+ S7.GetPrintableStringAt(data3, 1, 16);
-                    ret4 = "value of String DB: "+ S7.GetStringAt(data4, 1, 16);
+                    ret = "value of Bool DB: :"+S7.GetBitAt(data1,0,1);
+                    ret2 = "value of DInt DB: "+ S7.GetDIntAt(data2, 3);
+                    ret2 = "value of DInt DB: "+ S7.GetFloatAt(data2, 1);
+
+                    ret3 = "value of Printable String DB: "+ S7.GetPrintableStringAt(data4, 3, 16);
+                    ret3 = "value of Printable String DB: "+ S7.GetPrintableStringAt(data4, 1, 8);
+                    ret3 = "value of Printable String DB: "+ S7.GetPrintableStringAt(data4, 0, 8);
+                    ret3 = "value of Printable String DB: "+ S7.GetPrintableStringAt(data4, 2, 8);
+
+
+
+                    ret4 = "value of String DB: "+ S7.GetStringAt(data4, 3, 16);
+                    ret5 = "value of Date DB: "+ S7.GetDateAt(data5, 3);
                     ret5 = "value of Date DB: "+ S7.GetDateAt(data5, 1);
+
 
                     isConnected = true;
                     //ret = "Connection established.";
