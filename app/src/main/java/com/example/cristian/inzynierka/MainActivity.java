@@ -10,8 +10,6 @@ import android.view.View;
 public class MainActivity extends AppCompatActivity {
     private Toolbar toolbar;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +23,11 @@ public class MainActivity extends AppCompatActivity {
     }
     public void goToConnect(View view) {
         Intent intent = new Intent(this, ConnectActivity.class);
+        startActivity(intent);
+    }
+
+    public void goToHouseControl(View view) {
+        Intent intent = new Intent(this, HouseControlActivity.class);
         startActivity(intent);
     }
     @Override

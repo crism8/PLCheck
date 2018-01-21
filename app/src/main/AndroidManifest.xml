@@ -24,6 +24,10 @@
         </activity>
         <activity android:name=".ConnectActivity" />
         <activity android:name=".VisualisationActivity" />
+        <activity
+            android:name=".HouseControlActivity"
+            android:label="@string/title_activity_house_control"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>

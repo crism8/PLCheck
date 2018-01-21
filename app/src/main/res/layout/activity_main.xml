@@ -30,4 +30,14 @@
         android:layout_marginTop="48dp"
         android:onClick="goToConnect"
         android:text="Connection" />
+
+    <Button
+        android:id="@+id/houseControlButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/NextButton"
+        android:layout_below="@+id/ConnectButton"
+        android:layout_marginTop="48dp"
+        android:text="House Control"
+        android:onClick="goToHouseControl" />
 </RelativeLayout>
