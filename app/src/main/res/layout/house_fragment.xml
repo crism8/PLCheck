@@ -1,41 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:columnCount="2"
+    android:rowCount="3">
 
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/LightsImageButton"
         android:src="@drawable/light_bulb"
+        android:layout_gravity="fill"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
         android:contentDescription="@null"/>
 
     <ImageButton
         android:id="@+id/airConditionImageButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/jalousieImageButton"
+        android:layout_gravity="fill"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
         android:contentDescription="@null"
         android:src="@drawable/fan" />
-
-    <ImageButton
-        android:id="@+id/jalousieImageButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/LightsImageButton"
-        android:contentDescription="@null"
-        android:src="@drawable/jalousie_up" />
 
     <ImageView
         android:id="@+id/thermometerImageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:layout_gravity="fill"
         android:contentDescription="@null"
         android:src="@drawable/thermometer" />
 
-</RelativeLayout>
+    <ImageButton
+        android:id="@+id/jalousieImageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:layout_gravity="fill"
+        android:contentDescription="@null"
+        android:src="@drawable/jalousie_up" />
+
+    <ImageButton
+        android:id="@+id/houseAlarmImageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill"
+        android:layout_rowWeight="1"
+        android:contentDescription="@null"
+        android:src="@drawable/alarm_on" />
+
+    <Button
+        android:id="@+id/temperatureButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill"
+        android:layout_rowWeight="1"
+        android:textSize="40sp"
+        android:contentDescription="@null"
+        android:text="20°C" />
+
+</GridLayout>

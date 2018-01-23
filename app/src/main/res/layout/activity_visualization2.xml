@@ -15,12 +15,125 @@
         <LinearLayout
             android:id="@+id/inoutlayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" android:baselineAligned="false">
+            android:layout_height="wrap_content"
+            android:baselineAligned="false">
             <LinearLayout
-                android:id="@+id/inputlayuot"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
+                android:id="@+id/inputDBLayout"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/inDB1"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:contentDescription="@null"
+                    android:text="DB: 4"/>
+                <TextView
+                    android:id="@+id/posIn1TextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:text="Pos. 7"
+                    android:textColor="@color/blackColor"/>
+                <Button
+                    android:id="@+id/inDB2"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:contentDescription="@null"
+                    android:text="DB:"/>
+                <TextView
+                    android:id="@+id/posIn2TextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:text="Pos."
+                    android:textColor="@color/blackColor"/>
+                <Button
+                    android:id="@+id/inDB3"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:contentDescription="@null"
+                    android:text="DB: 5"/>
+                <TextView
+                    android:id="@+id/posIn3TextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:text="Pos. 3"
+                    android:textColor="@color/blackColor"/>
+                <Button
+                    android:id="@+id/inDB4"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:contentDescription="@null"
+                    android:text="DB:"/>
+                <TextView
+                    android:id="@+id/posIn4TextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:text="Pos."
+                    android:textColor="@color/blackColor"/>
+                <Button
+                    android:id="@+id/inDB5"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:contentDescription="@null"
+                    android:text="DB:"/>
+                <TextView
+                    android:id="@+id/posIn5TextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:text="Pos."
+                    android:textColor="@color/blackColor"/>
+                <Button
+                    android:id="@+id/inDB6"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:contentDescription="@null"
+                    android:text="DB:"/>
+                <TextView
+                    android:id="@+id/posIn6TextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:text="Pos."
+                    android:textColor="@color/blackColor"/>
+                <Button
+                    android:id="@+id/inDB7"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:contentDescription="@null"
+                    android:text="DB:"/>
+                <TextView
+                    android:id="@+id/posIn7TextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:text="Pos."
+                    android:textColor="@color/blackColor"/>
+                <Button
+                    android:id="@+id/inDB8"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:contentDescription="@null"
+                    android:text="DB:"/>
+                <TextView
+                    android:id="@+id/posIn8TextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:text="Pos."
+                    android:textColor="@color/blackColor"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/inputButtonsLayout"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:layout_width="0dp"
                 android:orientation="vertical">
 
                 <ImageButton
@@ -80,12 +193,122 @@
                     android:contentDescription="@null"/>
 
             </LinearLayout>
-
             <LinearLayout
-                android:id="@+id/outputlayuot"
-                android:layout_width="wrap_content"
+                android:id="@+id/outputDBLayout"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:layout_width="0dp"
+                android:orientation="vertical">
+                <Button
+                    android:id="@+id/outDB1"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:contentDescription="@null"
+                    android:text="DB:"/>
+                <TextView
+                    android:id="@+id/posOut1TextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:text="Pos."
+                    android:textColor="@color/blackColor"/>
+                <Button
+                    android:id="@+id/outDB2"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:contentDescription="@null"
+                    android:text="DB:"/>
+                <TextView
+                    android:id="@+id/posOut2TextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:text="Pos."
+                    android:textColor="@color/blackColor"/>
+                <Button
+                    android:id="@+id/outDB3"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:contentDescription="@null"
+                    android:text="DB:"/>
+                <TextView
+                    android:id="@+id/posOut3TextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:text="Pos."
+                    android:textColor="@color/blackColor"/>
+                <Button
+                    android:id="@+id/outDB4"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:contentDescription="@null"
+                    android:text="DB: 6"/>
+                <TextView
+                    android:id="@+id/posOut4TextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:text="Pos. 8"
+                    android:textColor="@color/blackColor"/>
+                <Button
+                    android:id="@+id/outDB5"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:contentDescription="@null"
+                    android:text="DB: 3"/>
+                <TextView
+                    android:id="@+id/posOut5TextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:text="Pos. 2"
+                    android:textColor="@color/blackColor"/>
+                <Button
+                    android:id="@+id/outDB6"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:contentDescription="@null"
+                    android:text="DB:"/>
+                <TextView
+                    android:id="@+id/posOut6TextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:text="Pos."
+                    android:textColor="@color/blackColor"/>
+                <Button
+                    android:id="@+id/outDB7"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:contentDescription="@null"
+                    android:text="DB:"/>
+                <TextView
+                    android:id="@+id/posOut7TextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:text="Pos."
+                    android:textColor="@color/blackColor"/>
+                <Button
+                    android:id="@+id/outDB8"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:contentDescription="@null"
+                    android:text="DB:"/>
+                <TextView
+                    android:id="@+id/posOut8TextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:text="Pos."
+                    android:textColor="@color/blackColor"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/outputLayout"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:layout_width="0dp"
                 android:orientation="vertical">
 
                 <ImageButton

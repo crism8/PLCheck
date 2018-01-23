@@ -25,6 +25,8 @@ public class VisualisationActivity extends FragmentActivity implements ListOfIte
     private TypedArray visualizationItemsImagesArray;
     ImageButton inputButtons[] = new ImageButton[9];
     ImageButton outputButtons[] = new ImageButton[9];
+    Button inDBButtons[] = new Button[9];
+    Button outDBButtons[] = new Button[9];
     boolean isInputButton = false;
     boolean isOutputButton = false;
     private int buttonNumber = 0;
@@ -59,6 +61,10 @@ public class VisualisationActivity extends FragmentActivity implements ListOfIte
         for (int i = 1; i < 9; i++) {
             String idInName = "inputButton" + i;
             String idOutName = "outputButton" + i;
+            String idOutDBName = "outDB" + i;
+            String idInDBName = "inDB" + i;
+            inDBButtons[i] = (Button) findViewById(res.getIdentifier(idInDBName, "id", getPackageName()));
+            outDBButtons[i] = (Button) findViewById(res.getIdentifier(idOutDBName, "id", getPackageName()));
             inputButtons[i] = (ImageButton) findViewById(res.getIdentifier(idInName, "id", getPackageName()));
             outputButtons[i] = (ImageButton) findViewById(res.getIdentifier(idOutName, "id", getPackageName()));
             Log.d("myTag4", "This is my messa33ge" + idInName + idOutName);
@@ -66,6 +72,18 @@ public class VisualisationActivity extends FragmentActivity implements ListOfIte
                 @Override
                 public void onClick(View v) {
                     chooseItem(v);
+                }
+            });
+            inDBButtons[i].setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    chooseDB(v);
+                }
+            });
+            outDBButtons[i].setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    chooseDB(v);
                 }
             });
             outputButtons[i].setOnClickListener(new View.OnClickListener() {
@@ -90,6 +108,9 @@ public class VisualisationActivity extends FragmentActivity implements ListOfIte
     public void chooseItem(View view) {
         final ListOfItemsDialog sd = ListOfItemsDialog.newInstance(R.array.visualizationItemsStringArray, -1, view);
         sd.show(getSupportFragmentManager(), TAG);
+    }
+    public void chooseDB(View view) {
+        //TODO
     }
     public void onSelectedOption(int selectedIndex, View v) {
         for (int i = 1; i < 9; i++) {
