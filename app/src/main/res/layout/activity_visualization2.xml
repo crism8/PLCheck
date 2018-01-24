@@ -11,7 +11,6 @@
         android:layout_height="wrap_content"
         android:scrollbars="vertical"
         android:layout_weight="1">
-
         <LinearLayout
             android:id="@+id/inoutlayout"
             android:layout_width="match_parent"
@@ -23,110 +22,109 @@
                 android:layout_height="match_parent"
                 android:layout_weight="0.5"
                 android:orientation="vertical">
-
                 <Button
                     android:id="@+id/inDB1"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:contentDescription="@null"
-                    android:text="DB: 4"/>
+                    android:text="@string/db_string"/>
                 <TextView
                     android:id="@+id/posInTextView1"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:gravity="center"
-                    android:text="Pos. 7"
+                    android:text="@string/pos_string"
                     android:textColor="@color/blackColor"/>
                 <Button
                     android:id="@+id/inDB2"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:contentDescription="@null"
-                    android:text="DB:"/>
+                    android:text="@string/db_string"/>
                 <TextView
                     android:id="@+id/posInTextView2"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:gravity="center"
-                    android:text="Pos."
+                    android:text="@string/pos_string"
                     android:textColor="@color/blackColor"/>
                 <Button
                     android:id="@+id/inDB3"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:contentDescription="@null"
-                    android:text="DB: 5"/>
+                    android:text="@string/db_string"/>
                 <TextView
                     android:id="@+id/posInTextView3"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:gravity="center"
-                    android:text="Pos. 3"
+                    android:text="@string/pos_string"
                     android:textColor="@color/blackColor"/>
                 <Button
                     android:id="@+id/inDB4"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:contentDescription="@null"
-                    android:text="DB:"/>
+                    android:text="@string/db_string"/>
                 <TextView
                     android:id="@+id/posInTextView4"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:gravity="center"
-                    android:text="Pos."
+                    android:text="@string/pos_string"
                     android:textColor="@color/blackColor"/>
                 <Button
                     android:id="@+id/inDB5"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:contentDescription="@null"
-                    android:text="DB:"/>
+                    android:text="@string/db_string"/>
                 <TextView
                     android:id="@+id/posInTextView5"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:gravity="center"
-                    android:text="Pos."
+                    android:text="@string/pos_string"
                     android:textColor="@color/blackColor"/>
                 <Button
                     android:id="@+id/inDB6"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:contentDescription="@null"
-                    android:text="DB:"/>
+                    android:text="@string/db_string"/>
                 <TextView
                     android:id="@+id/posInTextView6"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:gravity="center"
-                    android:text="Pos."
+                    android:text="@string/pos_string"
                     android:textColor="@color/blackColor"/>
                 <Button
                     android:id="@+id/inDB7"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:contentDescription="@null"
-                    android:text="DB:"/>
+                    android:text="@string/db_string"/>
                 <TextView
                     android:id="@+id/posInTextView7"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:gravity="center"
-                    android:text="Pos."
+                    android:text="@string/pos_string"
                     android:textColor="@color/blackColor"/>
                 <Button
                     android:id="@+id/inDB8"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:contentDescription="@null"
-                    android:text="DB:"/>
+                    android:text="@string/db_string"/>
                 <TextView
                     android:id="@+id/posInTextView8"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:gravity="center"
-                    android:text="Pos."
+                    android:text="@string/pos_string"
                     android:textColor="@color/blackColor"/>
             </LinearLayout>
             <LinearLayout
@@ -204,104 +202,104 @@
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:contentDescription="@null"
-                    android:text="DB:"/>
+                    android:text="@string/db_string"/>
                 <TextView
                     android:id="@+id/posOutTextView1"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:gravity="center"
-                    android:text="Pos."
+                    android:text="@string/pos_string"
                     android:textColor="@color/blackColor"/>
                 <Button
                     android:id="@+id/outDB2"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:contentDescription="@null"
-                    android:text="DB:"/>
+                    android:text="@string/db_string"/>
                 <TextView
                     android:id="@+id/posOutTextView2"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:gravity="center"
-                    android:text="Pos."
+                    android:text="@string/pos_string"
                     android:textColor="@color/blackColor"/>
                 <Button
                     android:id="@+id/outDB3"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:contentDescription="@null"
-                    android:text="DB:"/>
+                    android:text="@string/db_string"/>
                 <TextView
                     android:id="@+id/posOutTextView3"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:gravity="center"
-                    android:text="Pos."
+                    android:text="@string/pos_string"
                     android:textColor="@color/blackColor"/>
                 <Button
                     android:id="@+id/outDB4"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:contentDescription="@null"
-                    android:text="DB: 6"/>
+                    android:text="@string/db_string"/>
                 <TextView
                     android:id="@+id/posOutTextView4"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:gravity="center"
-                    android:text="Pos. 8"
+                    android:text="@string/pos_string"
                     android:textColor="@color/blackColor"/>
                 <Button
                     android:id="@+id/outDB5"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:contentDescription="@null"
-                    android:text="DB: 3"/>
+                    android:text="@string/db_string"/>
                 <TextView
                     android:id="@+id/posOutTextView5"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:gravity="center"
-                    android:text="Pos. 2"
+                    android:text="@string/pos_string"
                     android:textColor="@color/blackColor"/>
                 <Button
                     android:id="@+id/outDB6"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:contentDescription="@null"
-                    android:text="DB:"/>
+                    android:text="@string/db_string"/>
                 <TextView
                     android:id="@+id/posOutTextView6"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:gravity="center"
-                    android:text="Pos."
+                    android:text="@string/pos_string"
                     android:textColor="@color/blackColor"/>
                 <Button
                     android:id="@+id/outDB7"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:contentDescription="@null"
-                    android:text="DB:"/>
+                    android:text="@string/db_string"/>
                 <TextView
                     android:id="@+id/posOutTextView7"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:gravity="center"
-                    android:text="Pos."
+                    android:text="@string/pos_string"
                     android:textColor="@color/blackColor"/>
                 <Button
                     android:id="@+id/outDB8"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:contentDescription="@null"
-                    android:text="DB:"/>
+                    android:text="@string/db_string"/>
                 <TextView
                     android:id="@+id/posOutTextView8"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:gravity="center"
-                    android:text="Pos."
+                    android:text="@string/pos_string"
                     android:textColor="@color/blackColor"/>
             </LinearLayout>
             <LinearLayout

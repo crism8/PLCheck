@@ -5,7 +5,7 @@
     <string name="ipAddress">Address IP:</string>
     <string name="rack">Rack:</string>
     <string name="slot">Slot:</string>
-    <string name="ok">Ok</string>
+    <string name="ok">OK</string>
     <string name="cancel">Cancel</string>
     <string name="chooseItemTitle">Choose visualisation item:</string>
     <string name="okString">OK</string>
@@ -21,4 +21,7 @@
     <string name="db_dialog_title_string">Set parameters of data block.</string>
     <string name="data_block_dialog_string">Data block number:</string>
     <string name="position_dialog_string">Position:</string>
+    <string name="dialogDesc">Please fill any empty fields</string>
+    <string name="db_string">DB:</string>
+    <string name="pos_string">Pos.</string>
 </resources>

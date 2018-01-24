@@ -34,15 +34,15 @@ public class VisualisationActivity extends FragmentActivity implements ListOfIte
     TextView outTextViews[] = new TextView[9];
     Button inDBButtons[] = new Button[9];
     Button outDBButtons[] = new Button[9];
-    boolean isInputButton = false;
-    boolean isOutputButton = false;
     private int buttonNumber = 0;
     private String ip;
     private int slot;
     private int rack;
+    private int db;
+    private int dbPos;
     public S7Client client = new S7Client();
-    boolean isDefaultOnClickMethod = true;
-    Map<String,String> myMap = new HashMap<String, String>();
+   // boolean isDefaultOnClickMethod = true;
+   // Map<String,String> myMap = new HashMap<String, String>();
 
 
     @Override
@@ -85,16 +85,21 @@ public class VisualisationActivity extends FragmentActivity implements ListOfIte
                     chooseItem(v);
                 }
             });
+            final int finalI = i;
             inDBButtons[i].setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    chooseDB(v);
+                    TextView t = inTextViews[finalI];
+                    Button b = (Button) v;
+                    chooseDB(b, t);
                 }
             });
             outDBButtons[i].setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    chooseDB(v);
+                    TextView t = outTextViews[finalI];
+                    Button b = (Button) v;
+                    chooseDB(b, t);
                 }
             });
             outputButtons[i].setOnClickListener(new View.OnClickListener() {
@@ -120,57 +125,51 @@ public class VisualisationActivity extends FragmentActivity implements ListOfIte
         final ListOfItemsDialog sd = ListOfItemsDialog.newInstance(R.array.visualizationItemsStringArray, -1, view);
         sd.show(getSupportFragmentManager(), TAG);
     }
-    public void chooseDB(View view) {
-        //TODO
+    public void chooseDB(final Button but, final TextView tView) {
         AlertDialog.Builder mBuilder = new AlertDialog.Builder(VisualisationActivity.this);
-        View mView = getLayoutInflater().inflate(R.layout.db_params_dialog_layour, null);
+        View mView = getLayoutInflater().inflate(R.layout.db_params_dialog_layout, null);
         final EditText dbNumberEditText = (EditText) mView.findViewById(R.id.dbEditText);
         final EditText dbPosEditText = (EditText) mView.findViewById(R.id.dbPosEditText);
          Button okButton = (Button) mView.findViewById(R.id.OkDbButton);
-
-         okButton.setOnClickListener(new View.OnClickListener() {
+         Button cancelButton = (Button) mView.findViewById(R.id.CancelDbButton);
+         mBuilder.setView(mView);
+        final AlertDialog dialog = mBuilder.create();
+         dialog.show();
+        cancelButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.cancel();
+            }
+        });
+        okButton.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View v) {
                  if(!dbNumberEditText.getText().toString().isEmpty() && !dbPosEditText.getText().toString().isEmpty()) {
-                     Toast.makeText(VisualisationActivity.this, "GOOD", Toast.LENGTH_SHORT).show();
+                     dialog.dismiss();
+                     db = Integer.parseInt(dbNumberEditText.getText().toString());
+                     dbPos = Integer.parseInt(dbPosEditText.getText().toString());
+                     String dbString = "DB: " + dbNumberEditText.getText().toString();
+                     String dbPosString = "Pos: " + dbPosEditText.getText().toString();
+                     but.setText(dbString);
+                     tView.setText(dbPosString);
+
                  } else {
-                     Toast.makeText(VisualisationActivity.this, "Please fill any empty fields", Toast.LENGTH_SHORT).show();
+                     Toast.makeText(VisualisationActivity.this, R.string.dialogDesc, Toast.LENGTH_SHORT).show();
                  }
              }
          });
-         mBuilder.setView(mView);
-         AlertDialog dialog = mBuilder.create();
-         dialog.show();
     }
     public void onSelectedOption(int selectedIndex, View v) {
-        for (int i = 1; i < 9; i++) {
-            if (v.getId() == inputButtons[i].getId()) {
-                isInputButton = true;
-                buttonNumber = i;
-                break;
-            } else if (v.getId() == outputButtons[i].getId()) {
-                isOutputButton = true;
-                buttonNumber = i;
-                break;
-            }
-        }
+        ImageButton b = (ImageButton) v;
         Drawable drawable = visualizationItemsImagesArray.getDrawable(selectedIndex);
-        if (isOutputButton) {
-            outputButtons[buttonNumber].setImageDrawable(drawable);
-            outputButtons[buttonNumber].setBackground(getResources().getDrawable(R.color.whiteColor));
-            outputButtons[buttonNumber].setScaleType(ImageView.ScaleType.FIT_CENTER);
-        } else if (isInputButton) {
-            inputButtons[buttonNumber].setImageDrawable(drawable);
-            inputButtons[buttonNumber].setBackground(getResources().getDrawable(R.color.whiteColor));
-            inputButtons[buttonNumber].setScaleType(ImageView.ScaleType.FIT_CENTER);
-        }
-        isOutputButton = false;
-        isInputButton = false;
+        b.setImageDrawable(drawable);
+        b.setBackground(getResources().getDrawable(R.color.whiteColor));
+        b.setScaleType(ImageView.ScaleType.FIT_CENTER);
     }
 
     public void animateRotate(View v) {
         long animationDuration = 1000;
-        ImageButton button = (ImageButton) findViewById(v.getId());
+        ImageButton button = (ImageButton) v;
         ObjectAnimator rotateAnimation = ObjectAnimator.ofFloat(button, "rotation", 0f, 360f);
         rotateAnimation.setDuration(animationDuration);
         AnimatorSet animatorSet = new AnimatorSet();
@@ -179,7 +178,7 @@ public class VisualisationActivity extends FragmentActivity implements ListOfIte
     }
     public void animateX(View v) {
         long animationDuration = 1000;
-        ImageButton button = (ImageButton) findViewById(v.getId());
+        ImageButton button = (ImageButton) v;
         ObjectAnimator animatorX = ObjectAnimator.ofFloat(button, "X", 420f);
         animatorX.setDuration(animationDuration);
         AnimatorSet animatorSet = new AnimatorSet();
@@ -188,7 +187,7 @@ public class VisualisationActivity extends FragmentActivity implements ListOfIte
     }
     public void animateY(View v) {
         long animationDuration = 1000;
-        ImageButton button = (ImageButton) findViewById(v.getId());
+        ImageButton button = (ImageButton) v;
         ObjectAnimator animatorY = ObjectAnimator.ofFloat(button, "Y", 300f);
         animatorY.setDuration(animationDuration);
         AnimatorSet animatorSet = new AnimatorSet();
@@ -197,7 +196,7 @@ public class VisualisationActivity extends FragmentActivity implements ListOfIte
     }
     public void animateAlpha(View v) {
         long animationDuration = 1000;
-        ImageButton button = (ImageButton) findViewById(v.getId());
+        ImageButton button = (ImageButton) v;
         ObjectAnimator animatorAlpha = ObjectAnimator.ofFloat(button, View.ALPHA, 1.0f, 0.0f);
         animatorAlpha.setDuration(animationDuration);
         AnimatorSet animatorSet = new AnimatorSet();
@@ -206,55 +205,18 @@ public class VisualisationActivity extends FragmentActivity implements ListOfIte
     }
     private class PLCData extends AsyncTask<String, Void, String> {
         String ret = "";
-        String ret2 = "";
-        String ret3 = "";
-        String ret4 = "";
-        String ret5 = "";
-
         boolean isConnected = false;
         @Override
         protected String doInBackground(String... params) {
             try{
                 client.SetConnectionType(S7.S7_BASIC);
-                int res = client.ConnectTo("192.168.1.100", 0, 1);
+                int res = client.ConnectTo(ip, rack, slot);
                 if (res==0){ //connection is ok
                     byte[] data1 = new byte[50];
-                    byte[] data2 = new byte[50];
-                    byte[] data3 = new byte[50];
-                    byte[] data4 = new byte[50];
-                    byte[] data5 = new byte[50];
 
-
-                    res = client.ReadArea(S7.S7AreaDB,1,0,1,data1);
-                    res = client.ReadArea(S7.S7AreaDB,1,0,2,data1);
-
-                    res = client.ReadArea(S7.S7AreaDB,2,0,4,data2);
-                    res = client.ReadArea(S7.S7AreaDB,2,0,16,data2);
-
-                    res = client.ReadArea(S7.S7AreaDB,3,0,4,data3);
-                    res = client.ReadArea(S7.S7AreaDB,3,0,8,data3);
-
-
-                    res = client.ReadArea(S7.S7AreaDB,4,0,4,data4);
-                    res = client.ReadArea(S7.S7AreaDB,4,0,16,data4);
-                    res = client.ReadArea(S7.S7AreaDB,5,0,4,data5);
-                    res = client.ReadArea(S7.S7AreaDB,5,0,2,data5);
+                    res = client.ReadArea(S7.S7AreaDB,db,dbPos,1,data1);
 
                     ret = "value of Bool DB: :"+S7.GetBitAt(data1,0,1);
-                    ret2 = "value of DInt DB: "+ S7.GetDIntAt(data2, 3);
-                    ret2 = "value of DInt DB: "+ S7.GetFloatAt(data2, 1);
-
-                    ret3 = "value of Printable String DB: "+ S7.GetPrintableStringAt(data4, 3, 16);
-                    ret3 = "value of Printable String DB: "+ S7.GetPrintableStringAt(data4, 1, 8);
-                    ret3 = "value of Printable String DB: "+ S7.GetPrintableStringAt(data4, 0, 8);
-                    ret3 = "value of Printable String DB: "+ S7.GetPrintableStringAt(data4, 2, 8);
-
-
-
-                    ret4 = "value of String DB: "+ S7.GetStringAt(data4, 3, 16);
-                    ret5 = "value of Date DB: "+ S7.GetDateAt(data5, 3);
-                    ret5 = "value of Date DB: "+ S7.GetDateAt(data5, 1);
-
 
                     isConnected = true;
                     //ret = "Connection established.";
@@ -273,7 +235,6 @@ public class VisualisationActivity extends FragmentActivity implements ListOfIte
         @Override
         protected void onPostExecute(String result) {
             Log.d("ret", ret);
-            //spinner.setVisibility(View.GONE);
             if (isConnected) {
                 isConnected = false;
                 //goToVisualDialog();
