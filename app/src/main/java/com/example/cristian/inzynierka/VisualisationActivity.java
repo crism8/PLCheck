@@ -8,11 +8,16 @@ import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -25,6 +30,8 @@ public class VisualisationActivity extends FragmentActivity implements ListOfIte
     private TypedArray visualizationItemsImagesArray;
     ImageButton inputButtons[] = new ImageButton[9];
     ImageButton outputButtons[] = new ImageButton[9];
+    TextView inTextViews[] = new TextView [9];
+    TextView outTextViews[] = new TextView[9];
     Button inDBButtons[] = new Button[9];
     Button outDBButtons[] = new Button[9];
     boolean isInputButton = false;
@@ -59,10 +66,14 @@ public class VisualisationActivity extends FragmentActivity implements ListOfIte
     public void setupButtons() {
         Resources res = getResources();
         for (int i = 1; i < 9; i++) {
+            String idInTextViewName = "posInTextView" + i;
+            String idOutTextViewName = "posOutTextView" + i;
             String idInName = "inputButton" + i;
             String idOutName = "outputButton" + i;
             String idOutDBName = "outDB" + i;
             String idInDBName = "inDB" + i;
+            inTextViews[i] = (TextView) findViewById(res.getIdentifier(idInTextViewName, "id", getPackageName()));
+            outTextViews[i] = (TextView) findViewById(res.getIdentifier(idOutTextViewName, "id", getPackageName()));
             inDBButtons[i] = (Button) findViewById(res.getIdentifier(idInDBName, "id", getPackageName()));
             outDBButtons[i] = (Button) findViewById(res.getIdentifier(idOutDBName, "id", getPackageName()));
             inputButtons[i] = (ImageButton) findViewById(res.getIdentifier(idInName, "id", getPackageName()));
@@ -111,6 +122,25 @@ public class VisualisationActivity extends FragmentActivity implements ListOfIte
     }
     public void chooseDB(View view) {
         //TODO
+        AlertDialog.Builder mBuilder = new AlertDialog.Builder(VisualisationActivity.this);
+        View mView = getLayoutInflater().inflate(R.layout.db_params_dialog_layour, null);
+        final EditText dbNumberEditText = (EditText) mView.findViewById(R.id.dbEditText);
+        final EditText dbPosEditText = (EditText) mView.findViewById(R.id.dbPosEditText);
+         Button okButton = (Button) mView.findViewById(R.id.OkDbButton);
+
+         okButton.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View v) {
+                 if(!dbNumberEditText.getText().toString().isEmpty() && !dbPosEditText.getText().toString().isEmpty()) {
+                     Toast.makeText(VisualisationActivity.this, "GOOD", Toast.LENGTH_SHORT).show();
+                 } else {
+                     Toast.makeText(VisualisationActivity.this, "Please fill any empty fields", Toast.LENGTH_SHORT).show();
+                 }
+             }
+         });
+         mBuilder.setView(mView);
+         AlertDialog dialog = mBuilder.create();
+         dialog.show();
     }
     public void onSelectedOption(int selectedIndex, View v) {
         for (int i = 1; i < 9; i++) {

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/title"
+        android:layout_marginTop="16dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="@string/db_dialog_title_string"
+        android:textSize="20sp"
+        android:textColor="@color/blackColor"/>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="left">
+        <TextView
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/dbNumber"
+            android:text="@string/data_block_dialog_string"
+            android:textSize="20sp"
+            android:layout_marginStart="32dp"
+            android:textColor="@color/blackColor"/>
+        <EditText
+            android:id="@+id/dbEditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="2"
+            android:hint="@string/rackSlotPlaceholderString"
+            android:inputType="number"
+            android:textAlignment="center" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+    <TextView
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/dbPosNumber"
+            android:text="@string/position_dialog_string"
+            android:textSize="20sp"
+            android:layout_marginStart="32dp"
+            android:textColor="@color/blackColor"/>
+
+        <EditText
+            android:id="@+id/dbPosEditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="2"
+            android:hint="@string/rackSlotPlaceholderString"
+            android:inputType="number"
+            android:textAlignment="center" />
+    </LinearLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/OkDbButton"
+        android:textColor="@color/blackColor"
+        android:textSize="20sp"
+        android:layout_marginTop="8dp"
+        android:layout_gravity="center"
+        android:text="@string/okString"/>
+
+</LinearLayout>

@@ -18,4 +18,7 @@
     <string name="tab_text_3">Tab 3</string>
     <string name="action_settings">Settings</string>
     <string name="section_format">Hello World from section: %1$d</string>
+    <string name="db_dialog_title_string">Set parameters of data block.</string>
+    <string name="data_block_dialog_string">Data block number:</string>
+    <string name="position_dialog_string">Position:</string>
 </resources>
