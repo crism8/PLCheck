@@ -96,8 +96,7 @@ public class VisualisationActivity extends FragmentActivity implements ListOfIte
                 @Override
                 public void onClick(View v) {
                     TextView t = outTextViews[finalI];
-                    Button b = (Button) v;
-                    chooseDB(b, t);
+                    chooseDB(outDBButtons[finalI], t);
                 }
             });
             outputButtons[i].setOnClickListener(new View.OnClickListener() {
@@ -200,13 +199,14 @@ public class VisualisationActivity extends FragmentActivity implements ListOfIte
         animatorSet.playTogether(animatorAlpha);
         animatorSet.start();
     }
+
     private class PLCData extends AsyncTask<String, Void, String> {
         String ret = "";
-        int bd;
-        int bds;
-        public PLCData(int i, int s) {
-            bd = i;
-            bds = s;
+        int dataBlockNumber;
+        int dataBlockPos;
+        public PLCData(int i, int j) {
+            dataBlockNumber = i;
+            dataBlockPos = j;
         }
         boolean isConnected = false;
         @Override
@@ -217,7 +217,7 @@ public class VisualisationActivity extends FragmentActivity implements ListOfIte
                 if (res==0){ //connection is ok
                     byte[] data1 = new byte[50];
 
-                    res = client.ReadArea(S7.S7AreaDB,db,dbPos,1,data1);
+                    res = client.ReadArea(S7.S7AreaDB,dataBlockNumber,dataBlockPos,1,data1);
 
                     ret = "value of Bool DB: :"+S7.GetBitAt(data1,0,1);
 

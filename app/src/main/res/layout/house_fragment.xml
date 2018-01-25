@@ -54,7 +54,7 @@
         android:layout_gravity="fill"
         android:layout_rowWeight="1"
         android:contentDescription="@null"
-        android:src="@drawable/alarm_on" />
+        android:src="@drawable/alarm_off" />
 
     <Button
         android:id="@+id/temperatureButton"

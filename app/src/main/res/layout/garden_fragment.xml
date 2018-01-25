@@ -23,7 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_columnWeight="1"
         android:contentDescription="@null"
-        android:src="@drawable/fountain_full"
+        android:src="@drawable/fountain"
         android:layout_rowWeight="1"
         />
 

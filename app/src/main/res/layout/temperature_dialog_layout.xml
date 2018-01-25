@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <NumberPicker
+        android:id="@+id/setTemperatureNumberPicker"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="32dp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="?android:attr/buttonBarButtonStyle"
+        android:gravity="center">
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:id="@+id/cancelTempButton"
+            android:textColor="@color/blackColor"
+            android:textSize="15sp"
+            android:layout_marginTop="8dp"
+            android:layout_gravity="center"
+            style="?android:attr/alertDialogStyle"
+            android:text="@string/cancel"/>
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:id="@+id/okTempButton"
+            android:textColor="@color/blackColor"
+            android:textSize="15sp"
+            android:layout_marginTop="8dp"
+            android:layout_gravity="center"
+            style="?android:attr/alertDialogStyle"
+            android:text="@string/okString"/>
+    </LinearLayout>
+
+
+</LinearLayout>

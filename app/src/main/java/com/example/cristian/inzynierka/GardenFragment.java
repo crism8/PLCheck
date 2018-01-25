@@ -31,10 +31,63 @@ public class GardenFragment extends Fragment {
 
     public void setupButtons(View v) {
         watering = (ImageButton) v.findViewById(R.id.wateringImageButton);
+        gateway = (ImageButton) v.findViewById(R.id.gatewayImageButton);
+        fountain = (ImageButton) v.findViewById(R.id.fountainImageButton);
+        lights = (ImageButton) v.findViewById(R.id.fountainLightsImageButton);
         watering.setOnClickListener(new View.OnClickListener() {
+            boolean isOnWatering = false;
             @Override
             public void onClick(View v) {
-               // zla metoda watering.setBackgroundResource(R.drawable.hose_full);
+                if(isOnWatering) {
+                    watering.setImageResource(R.drawable.hose);
+                    isOnWatering = false;
+
+                } else {
+                    watering.setImageResource(R.drawable.hose_full);
+                    isOnWatering = true;
+                }
+            }
+        });
+        gateway.setOnClickListener(new View.OnClickListener() {
+            boolean isOnGateway = false;
+            @Override
+            public void onClick(View v) {
+                if(isOnGateway) {
+                    gateway.setImageResource(R.drawable.gateway);
+                    isOnGateway = false;
+
+                } else {
+                    gateway.setImageResource(R.drawable.gateway_color);
+                    isOnGateway = true;
+                }
+            }
+        });
+        fountain.setOnClickListener(new View.OnClickListener() {
+            boolean isOnFountain = false;
+            @Override
+            public void onClick(View v) {
+                if(isOnFountain) {
+                    fountain.setImageResource(R.drawable.fountain);
+                    isOnFountain = false;
+
+                } else {
+                    fountain.setImageResource(R.drawable.fountain_full);
+                    isOnFountain = true;
+                }
+            }
+        });
+        lights.setOnClickListener(new View.OnClickListener() {
+            boolean isOnLights = false;
+            @Override
+            public void onClick(View v) {
+                if(isOnLights) {
+                    lights.setImageResource(R.drawable.light_bulb);
+                    isOnLights = false;
+
+                } else {
+                    lights.setImageResource(R.drawable.light_bulb_color);
+                    isOnLights = true;
+                }
             }
         });
     }
