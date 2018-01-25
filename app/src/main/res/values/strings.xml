@@ -24,4 +24,6 @@
     <string name="dialogDesc">Please fill any empty fields</string>
     <string name="db_string">DB:</string>
     <string name="pos_string">Pos.</string>
+    <string name="no_connect_string">Connection could not be Established Check parameters and try again</string>
+    <string name="connected_string">Connection established Go to visualisation</string>
 </resources>

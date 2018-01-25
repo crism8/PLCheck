@@ -34,7 +34,6 @@ public class VisualisationActivity extends FragmentActivity implements ListOfIte
     TextView outTextViews[] = new TextView[9];
     Button inDBButtons[] = new Button[9];
     Button outDBButtons[] = new Button[9];
-    private int buttonNumber = 0;
     private String ip;
     private int slot;
     private int rack;
@@ -78,7 +77,6 @@ public class VisualisationActivity extends FragmentActivity implements ListOfIte
             outDBButtons[i] = (Button) findViewById(res.getIdentifier(idOutDBName, "id", getPackageName()));
             inputButtons[i] = (ImageButton) findViewById(res.getIdentifier(idInName, "id", getPackageName()));
             outputButtons[i] = (ImageButton) findViewById(res.getIdentifier(idOutName, "id", getPackageName()));
-            Log.d("myTag4", "This is my messa33ge" + idInName + idOutName);
             inputButtons[i].setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -90,8 +88,8 @@ public class VisualisationActivity extends FragmentActivity implements ListOfIte
                 @Override
                 public void onClick(View v) {
                     TextView t = inTextViews[finalI];
-                    Button b = (Button) v;
-                    chooseDB(b, t);
+                    //Button b = (Button) v;
+                    chooseDB(inDBButtons[finalI], t);
                 }
             });
             outDBButtons[i].setOnClickListener(new View.OnClickListener() {
@@ -152,7 +150,6 @@ public class VisualisationActivity extends FragmentActivity implements ListOfIte
                      String dbPosString = "Pos: " + dbPosEditText.getText().toString();
                      but.setText(dbString);
                      tView.setText(dbPosString);
-
                  } else {
                      Toast.makeText(VisualisationActivity.this, R.string.dialogDesc, Toast.LENGTH_SHORT).show();
                  }

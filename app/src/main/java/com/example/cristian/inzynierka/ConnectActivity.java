@@ -12,7 +12,7 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ProgressBar;
-import android.widget.TextView;
+import android.widget.Toast;
 import Moka7.*;
 
 public class ConnectActivity extends AppCompatActivity {
@@ -65,17 +65,22 @@ public class ConnectActivity extends AppCompatActivity {
 
     public void plcConnect (View view) {
         spinner.setVisibility(View.VISIBLE);
-        slotInt = Integer.parseInt(slot.getText().toString());
-        rackInt = Integer.parseInt(rack.getText().toString());
-        ipAd = ipAddress.getText().toString();
-        hideKeyboard(view);
-        Log.d("myTag", "This is my message:"+ ipAd);
-        new PLCConnectionChecker().execute("");
+        if(!slot.getText().toString().isEmpty() && !rack.getText().toString().isEmpty()) {
+            slotInt = Integer.parseInt(slot.getText().toString());
+            rackInt = Integer.parseInt(rack.getText().toString());
+            ipAd = ipAddress.getText().toString();
+            hideKeyboard(view);
+            Log.d("myTag", "This is my message:"+ ipAd);
+            new PLCConnectionChecker().execute("");
+        } else {
+            Toast.makeText(ConnectActivity.this, R.string.dialogDesc, Toast.LENGTH_SHORT).show();
+
+        }
     }
 
     private void goToVisualDialog() {
         AlertDialog.Builder builder1 = new AlertDialog.Builder(this);
-        builder1.setMessage("Connection established\nGo to visualisation");
+        builder1.setMessage(R.string.connected_string);
         builder1.setCancelable(true);
 
         builder1.setPositiveButton(
@@ -102,7 +107,7 @@ public class ConnectActivity extends AppCompatActivity {
     }
     private void notConnectedDialog() {
         AlertDialog.Builder builder1 = new AlertDialog.Builder(this);
-        builder1.setMessage("Connection could not be Established\nCheck parameters and try again");
+        builder1.setMessage(R.string.no_connect_string);
         builder1.setCancelable(true);
 
         builder1.setPositiveButton(
@@ -137,9 +142,6 @@ public class ConnectActivity extends AppCompatActivity {
                 client.SetConnectionType(S7.S7_BASIC);
                 int res = client.ConnectTo(ipAd, rackInt, slotInt);
                 if (res==0){ //connection is ok
-                    //byte[] data = new byte[4];
-                    //res = client.ReadArea(S7.S7AreaDB,7,0,4,data);
-                    //ret = "value of DB7.DBD0:"+S7.GetFloatAt(data,0);
                     isConnected = true;
                     ret = "Connection established.";
                 }else{

@@ -35,7 +35,7 @@
         android:layout_gravity="fill"
         android:layout_columnWeight="1"
         android:contentDescription="@null"
-        android:src="@drawable/hose_full"
+        android:src="@drawable/hose"
         android:layout_rowWeight="1" />
 
     <ImageButton
