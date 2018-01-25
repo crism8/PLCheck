@@ -116,7 +116,7 @@ public class VisualisationActivity extends FragmentActivity implements ListOfIte
         });
     }
     public void startVisual() {
-        new PLCData().execute("");
+        new PLCData(db, dbPos).execute("");
     }
 
     public void chooseItem(View view) {
@@ -202,6 +202,12 @@ public class VisualisationActivity extends FragmentActivity implements ListOfIte
     }
     private class PLCData extends AsyncTask<String, Void, String> {
         String ret = "";
+        int bd;
+        int bds;
+        public PLCData(int i, int s) {
+            bd = i;
+            bds = s;
+        }
         boolean isConnected = false;
         @Override
         protected String doInBackground(String... params) {
