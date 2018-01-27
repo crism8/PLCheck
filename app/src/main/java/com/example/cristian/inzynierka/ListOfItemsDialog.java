@@ -47,7 +47,7 @@ public class ListOfItemsDialog extends DialogFragment implements DialogInterface
 
         builder.setTitle(R.string.chooseItemTitle);
         builder.setSingleChoiceItems(mResourceArray, mSelectedIndex, this);
-        builder.setPositiveButton(R.string.ok, this);
+        builder.setPositiveButton(R.string.okString, this);
         builder.setNegativeButton(R.string.cancel, this);
         return builder.create();
     }

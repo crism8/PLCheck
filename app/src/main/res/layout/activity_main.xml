@@ -1,16 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.example.cristian.inzynierka.MainActivity">
-    <android.support.v7.widget.Toolbar
-        android:background="@color/colorPrimary"
-        android:id="@+id/toolbar"
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="50dp">
-    </android.support.v7.widget.Toolbar>
+        android:layout_height="50dp"
+        android:background="@color/colorPrimaryDark"
+        android:text="@string/app_name"
+        android:textColor="@color/whiteColor"
+        android:textSize="30sp"
+        android:gravity="center"/>
+
+    <Button
+        android:id="@+id/visualButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:onClick="goToConnect"
+        android:text="@string/visual_string" />
+
+    <Button
+        android:id="@+id/houseControlButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:text="@string/house_control_string"
+        android:onClick="goToHouseControl" />
 
     <Button
         android:id="@+id/NextButton"
@@ -18,26 +37,5 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="46dp"
         android:onClick="goToVisualization"
-        android:text="Next"
-        android:layout_below="@+id/toolbar"
-        android:layout_centerHorizontal="true" />
-
-    <Button
-        android:id="@+id/ConnectButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/NextButton"
-        android:layout_marginTop="48dp"
-        android:onClick="goToConnect"
-        android:text="Connection" />
-
-    <Button
-        android:id="@+id/houseControlButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/NextButton"
-        android:layout_below="@+id/ConnectButton"
-        android:layout_marginTop="48dp"
-        android:text="House Control"
-        android:onClick="goToHouseControl" />
-</RelativeLayout>
+        android:text="Next" />
+</LinearLayout>
