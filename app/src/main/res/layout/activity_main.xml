@@ -17,7 +17,7 @@
 
     <Button
         android:id="@+id/visualButton"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
         android:onClick="goToConnect"
@@ -25,14 +25,14 @@
 
     <Button
         android:id="@+id/houseControlButton"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
         android:text="@string/house_control_string"
         android:onClick="goToHouseControl" />
 
     <Button
-        android:id="@+id/NextButton"
+        android:id="@+id/nextButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="46dp"

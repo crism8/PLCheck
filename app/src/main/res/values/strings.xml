@@ -15,11 +15,11 @@
     <string name="db_dialog_title_string">Set parameters of data block.</string>
     <string name="data_block_dialog_string">Data block number:</string>
     <string name="position_dialog_string">Position:</string>
-    <string name="dialogDesc">Please fill any empty fields</string>
+    <string name="dialogDesc">Please fill all empty fields</string>
     <string name="db_string">DB:</string>
     <string name="pos_string">Pos.</string>
-    <string name="no_connect_string">Connection could not be Established Check parameters and try again</string>
-    <string name="connected_string">Connection established Go to visualisation</string>
+    <string name="no_connect_string">Connection could not be established. Check parameters and try again.</string>
+    <string name="connected_string">Connection established. Go to visualisation.</string>
     <string name="house_control_string">House Control Mode</string>
     <string name="visual_string">Visualisation Mode</string>
     <string name="tab_text_2">tab2</string>

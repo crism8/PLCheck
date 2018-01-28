@@ -138,56 +138,56 @@
                     android:id="@+id/inputButton1"
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
-                    android:src="@mipmap/ic_add_black_24dp"
+                    android:src="@drawable/ic_add_black_24dp"
                     android:contentDescription="@null" />
 
                 <ImageButton
                     android:id="@+id/inputButton2"
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
-                    android:src="@mipmap/ic_add_black_24dp"
+                    android:src="@drawable/ic_add_black_24dp"
                     android:contentDescription="@null" />
 
                 <ImageButton
                     android:id="@+id/inputButton3"
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
-                    android:src="@mipmap/ic_add_black_24dp"
+                    android:src="@drawable/ic_add_black_24dp"
                     android:contentDescription="@null" />
 
                 <ImageButton
                     android:id="@+id/inputButton4"
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
-                    android:src="@mipmap/ic_add_black_24dp"
+                    android:src="@drawable/ic_add_black_24dp"
                     android:contentDescription="@null" />
 
                 <ImageButton
                     android:id="@+id/inputButton5"
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
-                    android:src="@mipmap/ic_add_black_24dp"
+                    android:src="@drawable/ic_add_black_24dp"
                     android:contentDescription="@null" />
 
                 <ImageButton
                     android:id="@+id/inputButton6"
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
-                    android:src="@mipmap/ic_add_black_24dp"
+                    android:src="@drawable/ic_add_black_24dp"
                     android:contentDescription="@null" />
 
                 <ImageButton
                     android:id="@+id/inputButton7"
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
-                    android:src="@mipmap/ic_add_black_24dp"
+                    android:src="@drawable/ic_add_black_24dp"
                     android:contentDescription="@null"/>
 
                 <ImageButton
                     android:id="@+id/inputButton8"
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
-                    android:src="@mipmap/ic_add_black_24dp"
+                    android:src="@drawable/ic_add_black_24dp"
                     android:contentDescription="@null"/>
 
             </LinearLayout>
@@ -314,56 +314,56 @@
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:contentDescription="@null"
-                    android:src="@mipmap/ic_add_black_24dp" />
+                    android:src="@drawable/ic_add_black_24dp" />
 
                 <ImageButton
                     android:id="@+id/outputButton2"
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:contentDescription="@null"
-                    android:src="@mipmap/ic_add_black_24dp" />
+                    android:src="@drawable/ic_add_black_24dp" />
 
                 <ImageButton
                     android:id="@+id/outputButton3"
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:contentDescription="@null"
-                    android:src="@mipmap/ic_add_black_24dp" />
+                    android:src="@drawable/ic_add_black_24dp" />
 
                 <ImageButton
                     android:id="@+id/outputButton4"
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:contentDescription="@null"
-                    android:src="@mipmap/ic_add_black_24dp" />
+                    android:src="@drawable/ic_add_black_24dp" />
 
                 <ImageButton
                     android:id="@+id/outputButton5"
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:contentDescription="@null"
-                    android:src="@mipmap/ic_add_black_24dp" />
+                    android:src="@drawable/ic_add_black_24dp" />
 
                 <ImageButton
                     android:id="@+id/outputButton6"
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:contentDescription="@null"
-                    android:src="@mipmap/ic_add_black_24dp" />
+                    android:src="@drawable/ic_add_black_24dp" />
 
                 <ImageButton
                     android:id="@+id/outputButton7"
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:contentDescription="@null"
-                    android:src="@mipmap/ic_add_black_24dp" />
+                    android:src="@drawable/ic_add_black_24dp" />
 
                 <ImageButton
                     android:id="@+id/outputButton8"
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:contentDescription="@null"
-                    android:src="@mipmap/ic_add_black_24dp" />
+                    android:src="@drawable/ic_add_black_24dp" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

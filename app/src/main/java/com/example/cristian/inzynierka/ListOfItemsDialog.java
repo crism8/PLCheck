@@ -62,7 +62,7 @@ public class ListOfItemsDialog extends DialogFragment implements DialogInterface
 
             case Dialog.BUTTON_POSITIVE:
                 dialog.dismiss();
-                // message selected value to registered calbacks
+                // message selected value to registered callbacks
                 mDialogSelectorCallback.onSelectedOption(mSelectedIndex, pressedButton);
                 break;
 

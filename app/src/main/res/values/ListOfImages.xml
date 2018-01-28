@@ -2,23 +2,32 @@
 <resources>
     <string-array
         name="visualizationItemsStringArray">
+        <item>Pump</item>
+        <item>Conveyor</item>
         <item>Fan</item>
         <item>Colored fan</item>
         <item>Light bulb</item>
         <item>Black background light bulb</item>
+        <item>Diode</item>
+        <item>Gear Wheel</item>
         <item>Star</item>
         <item>Spinning Star</item>
-        <item>Gear Wheel</item>
-
+        <item>String</item>
+        <item>Number</item>
     </string-array>
 
     <array name="visualizationItemsImagesArray">
+        <item>@drawable/pump</item>
+        <item>@drawable/conveyors</item>
         <item>@drawable/fan</item>
         <item>@drawable/fan_color</item>
         <item>@drawable/light_bulb</item>
         <item>@drawable/light_bulb_empty</item>
+        <item>@drawable/alarm_off</item>
+        <item>@drawable/gear_wheel</item>
         <item>@drawable/star</item>
         <item>@drawable/star_color</item>
-        <item>@drawable/gear_wheel</item>
+        <item>"Check String"</item>
+        <item>"Check number"</item>
     </array>
 </resources>

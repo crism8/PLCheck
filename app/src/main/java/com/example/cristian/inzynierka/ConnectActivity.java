@@ -64,8 +64,8 @@ public class ConnectActivity extends AppCompatActivity {
     }
 
     public void plcConnect (View view) {
-        spinner.setVisibility(View.VISIBLE);
         if(!slot.getText().toString().isEmpty() && !rack.getText().toString().isEmpty()) {
+            spinner.setVisibility(View.VISIBLE);
             slotInt = Integer.parseInt(slot.getText().toString());
             rackInt = Integer.parseInt(rack.getText().toString());
             ipAd = ipAddress.getText().toString();
@@ -73,6 +73,7 @@ public class ConnectActivity extends AppCompatActivity {
             Log.d("myTag", "This is my message:"+ ipAd);
             new PLCConnectionChecker().execute("");
         } else {
+            hideKeyboard(view);
             Toast.makeText(ConnectActivity.this, R.string.dialogDesc, Toast.LENGTH_SHORT).show();
 
         }

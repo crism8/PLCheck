@@ -199,6 +199,7 @@ public class VisualisationActivity extends FragmentActivity implements ListOfIte
 
     private class PLCData extends AsyncTask<String, Void, String> {
         String ret = "";
+        boolean isTurnOn;
         int dataBlockNumber;
         int dataBlockPos;
         public PLCData(int i, int j) {
@@ -215,9 +216,8 @@ public class VisualisationActivity extends FragmentActivity implements ListOfIte
                     byte[] data1 = new byte[50];
 
                     res = client.ReadArea(S7.S7AreaDB,dataBlockNumber,dataBlockPos,1,data1);
-
+                    isTurnOn = S7.GetBitAt(data1,0,1);
                     ret = "value of Bool DB: :"+S7.GetBitAt(data1,0,1);
-
                     isConnected = true;
                     //ret = "Connection established.";
                 }else{
