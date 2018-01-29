@@ -132,8 +132,8 @@ public class GarageFragment extends Fragment {
                     byte[] readData = new byte[1];
                     byte[] writeData = new byte[1];
                     S7.SetBitAt(writeData,0, 1, isTurnOn);
-                    res = client.ReadArea(S7.S7AreaDB, dataBlockNumber,dataBlockPos,1,readData);
                     res = client.WriteArea(S7.S7AreaDB, dataBlockNumber, dataBlockPos, 1, writeData);
+                    res = client.ReadArea(S7.S7AreaDB, dataBlockNumber,dataBlockPos,1,readData);
                     isTurnOn = S7.GetBitAt(readData,0,1);
                     ret = "value of Bool DB: :"+S7.GetBitAt(readData,0,1);
                     isConnected = true;

@@ -183,8 +183,9 @@ public class HouseFragment extends Fragment {
                     byte[] writeData = new byte[1];
                     byte[] writeDataTemp = new byte[16];
                     S7.SetBitAt(writeData,0, 1, isTurnOn);
-                    res = client.ReadArea(S7.S7AreaDB, dataBlockNumber,dataBlockPos,1,readData);
                     res = client.WriteArea(S7.S7AreaDB, dataBlockNumber, dataBlockPos, 1, writeData);
+                    res = client.ReadArea(S7.S7AreaDB, dataBlockNumber,dataBlockPos,1,readData);
+
                     if (isTemp) {
                         S7.SetDIntAt(writeDataTemp, 0, temp);
                         res = client.WriteArea(S7.S7AreaDB, dataBlockNumber, dataBlockPos, 1, writeDataTemp);

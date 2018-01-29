@@ -11,9 +11,7 @@
         <item>Diode</item>
         <item>Gear Wheel</item>
         <item>Star</item>
-        <item>Spinning Star</item>
-        <item>String</item>
-        <item>Number</item>
+        <item>Colored Star</item>
     </string-array>
 
     <array name="visualizationItemsImagesArray">
@@ -27,7 +25,28 @@
         <item>@drawable/gear_wheel</item>
         <item>@drawable/star</item>
         <item>@drawable/star_color</item>
-        <item>"Check String"</item>
-        <item>"Check number"</item>
+    </array>
+    <array name="conveyorItemsImagesArray">
+        <item>@drawable/conveyor_color_first</item>
+        <item>@drawable/conveyor_color_second</item>
+        <item>@drawable/conveyor_color_third</item>
+    </array>
+    <array name="pumpItemsImagesArray">
+        <item>@drawable/pump_full1</item>
+        <item>@drawable/pump_full2</item>
+        <item>@drawable/pump_full3</item>
+        <item>@drawable/pump_full4</item>
+    </array>
+    <array name="lightItemsImagesArray">
+        <item>@drawable/light_bulb</item>
+        <item>@drawable/light_bulb_color</item>
+    </array>
+    <array name="diodeItemsImagesArray">
+        <item>@drawable/alarm_off</item>
+        <item>@drawable/alarm_on</item>
+    </array>
+    <array name="blackBulbItemsImagesArray">
+        <item>@drawable/light_bulb_empty</item>
+        <item>@drawable/light_bulb_black_background</item>
     </array>
 </resources>
